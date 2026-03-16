@@ -2,7 +2,7 @@
   "name": "hospital-san-miguel",
   "type": "module",
   "version": "1.0.0",
-  "description": "Sitio web del Hospital San Miguel - El Carmen de Putumayo, Ecuador",
+  "description": "Sitio web del Hospital del Día San Miguel - El Carmen de Putumayo, Ecuador",
   "engines": {
     "node": ">=22.12.0"
   },

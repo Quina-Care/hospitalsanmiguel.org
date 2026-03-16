@@ -13,7 +13,7 @@ import embarazo from "../assets/images/embarazo.jpg";
 
 <Layout
   title="Hospital del Día San Miguel | El Carmen de Putumayo"
-  description="Hospital en El Carmen de Putumayo, Ecuador. Consulta médica, emergencias 24/7, radiografías, laboratorio, farmacia, maternidad y hospitalización."
+  description="Hospital del Día en El Carmen de Putumayo, Ecuador. Consulta médica, emergencias 24/7, radiografías, laboratorio, farmacia, maternidad y observación."
 >
   <!-- ═══════════════════════════════════════════
        HEADER / NAV
@@ -112,8 +112,8 @@ import embarazo from "../assets/images/embarazo.jpg";
           <Image src={cirugia} alt="Sala de cirugía del Hospital del Día San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
           <div class="absolute inset-0 bg-gradient-to-t from-hsmBlack/80 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-lg font-bold text-white mb-1">Cirugía</h3>
-            <p class="text-white/80 text-sm">Ligadura y mini-cesáreas todos los días</p>
+            <h3 class="text-lg font-bold text-white mb-1">Cirugía Ambulatoria</h3>
+            <p class="text-white/80 text-sm">Ligadura y mini-cesáreas ambulatorias</p>
           </div>
         </div>
 
@@ -175,7 +175,7 @@ import embarazo from "../assets/images/embarazo.jpg";
           Atención médica accesible
         </h2>
         <p class="hsm-body mt-4 max-w-2xl mx-auto">
-          Ofrecemos tarifas accesibles para toda la comunidad.
+          Ofrecemos tarifas accesibles para toda la comunidad. Precios finales, servicios de salud exentos de IVA.
         </p>
       </div>
 
@@ -225,14 +225,15 @@ import embarazo from "../assets/images/embarazo.jpg";
                 <span class="font-bold text-hsmBlack">$15.00</span>
               </div>
               <p class="text-xs text-gray-500 mt-2">60.000 pesos colombianos</p>
+              <p class="text-xs text-gray-500 mt-3">La atención de emergencia está garantizada sin condición de pago, conforme a la Constitución del Ecuador.</p>
             </div>
           </div>
         </div>
 
-        <!-- Hospitalización -->
+        <!-- Observación -->
         <div class="border border-gray-100 rounded-lg overflow-hidden">
           <div class="bg-hsmRed p-6">
-            <h3 class="text-lg font-bold text-white uppercase tracking-wide">Hospitalización</h3>
+            <h3 class="text-lg font-bold text-white uppercase tracking-wide">Observación</h3>
           </div>
           <div class="p-6">
             <div class="mb-4">
@@ -242,7 +243,7 @@ import embarazo from "../assets/images/embarazo.jpg";
             </div>
             <div class="border-t border-gray-100 pt-4 space-y-3">
               <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-600">Noche de hospitalización</span>
+                <span class="text-sm text-gray-600">Observación (hasta 24 horas)</span>
                 <span class="font-bold text-hsmBlack">$15.00</span>
               </div>
               <p class="text-xs text-gray-500 mt-2">60.000 pesos colombianos</p>
@@ -278,7 +279,7 @@ import embarazo from "../assets/images/embarazo.jpg";
           El Hospital del Día San Miguel está ubicado en El Carmen de Putumayo, Ecuador, a orillas del río. Brindamos atención médica accesible a toda la comunidad.
         </p>
         <p class="hsm-body--light mt-4">
-          Nuestro hospital cuenta con consulta externa, servicio de emergencia 24/7, radiografías, laboratorio clínico propio, farmacia, sala de maternidad y área de hospitalización.
+          Nuestro hospital cuenta con consulta externa, servicio de emergencia 24/7, radiografías, laboratorio clínico propio, farmacia, sala de maternidad y área de observación.
         </p>
         <a href="#contacto" class="hsm-btn hsm-btn--primary mt-8">Contáctenos</a>
       </div>
@@ -409,7 +410,7 @@ import embarazo from "../assets/images/embarazo.jpg";
             </li>
             <li class="flex items-center gap-3">
               <svg class="w-5 h-5 text-hsmRed flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="text-gray-600">Hospitalización</span>
+              <span class="text-gray-600">Observación (hasta 24 horas)</span>
             </li>
           </ul>
         </div>
@@ -422,56 +423,29 @@ import embarazo from "../assets/images/embarazo.jpg";
        ═══════════════════════════════════════════ -->
   <footer class="bg-hsmBlack py-16">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <div class="grid md:grid-cols-2 gap-12 mb-12">
         <div>
           <div class="flex items-center gap-3 mb-4">
             <img src="/images/logo-hospitalsanmiguel.min.svg" alt="Logo Hospital del Día San Miguel" class="h-10 w-auto brightness-0 invert" width="40" height="40" loading="lazy" />
           </div>
           <p class="text-white/60 text-sm leading-relaxed">
-            Hospital al servicio de la comunidad de El Carmen de Putumayo, Ecuador.
+            Hospital del Día al servicio de la comunidad de El Carmen de Putumayo, Ecuador.
           </p>
-          <div class="mt-6">
-            <a href="https://www.facebook.com/hospsanmiguel" target="_blank" rel="noopener noreferrer" class="text-white/40 hover:text-white transition-colors" aria-label="Facebook">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-          </div>
         </div>
 
         <div>
-          <h4 class="hsm-footer-heading mb-4">Navegación</h4>
-          <ul class="space-y-2">
-            <li><a href="#inicio" class="text-white/60 text-sm hover:text-white transition-colors">Inicio</a></li>
-            <li><a href="#servicios" class="text-white/60 text-sm hover:text-white transition-colors">Servicios</a></li>
-            <li><a href="#precios" class="text-white/60 text-sm hover:text-white transition-colors">Precios</a></li>
-            <li><a href="#nosotros" class="text-white/60 text-sm hover:text-white transition-colors">Nosotros</a></li>
-            <li><a href="#contacto" class="text-white/60 text-sm hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="hsm-footer-heading mb-4">Contacto</h4>
-          <ul class="space-y-2">
-            <li class="text-white/60 text-sm">Miguel Sedano 1, Puerto El Carmen del Putumayo, Ecuador</li>
-            <li>
-              <a href="https://wa.me/593939912321" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
-                +593 93 991 2321
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/hospsanmiguel" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
-                @hospsanmiguel
-              </a>
-            </li>
+          <h4 class="hsm-footer-heading mb-4">Avisos Legales</h4>
+          <ul class="space-y-3">
+            <li class="text-white/40 text-xs leading-relaxed">Los pacientes tienen derecho a recibir atención digna, información clara sobre su tratamiento y confidencialidad de sus datos, conforme a la Ley de Derechos y Amparo del Paciente.</li>
+            <li class="text-white/40 text-xs leading-relaxed">Al contactarnos por WhatsApp u otros medios, sus datos personales serán tratados únicamente para fines de atención médica, conforme a la Ley Orgánica de Protección de Datos Personales.</li>
+            <li class="text-white/40 text-xs leading-relaxed">Todas las personas que aparecen en las fotografías han dado su consentimiento para el uso de sus imágenes.</li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-white/5 pt-6">
         <p class="hsm-meta text-white/60">
-          &copy; 2025 Hospital del Día San Miguel. Todos los derechos reservados.
-        </p>
-        <p class="hsm-meta text-white/60">
-          Todas las personas que aparecen en las fotografías han dado su consentimiento para el uso de sus imágenes.
+          &copy; 2026 Hospital del Día San Miguel &middot; Registro MSP N.º XXXX-XXXX-XXXX
         </p>
       </div>
     </div>

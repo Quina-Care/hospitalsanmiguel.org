@@ -18,7 +18,7 @@ const { title, description } = Astro.props;
     <!-- SEO -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Hospital del Día San Miguel" />
-    <meta name="keywords" content="hospital, San Miguel, El Carmen de Putumayo, Ecuador, salud, emergencia, consulta médica, laboratorio, radiografía, maternidad, farmacia" />
+    <meta name="keywords" content="hospital del día, San Miguel, El Carmen de Putumayo, Ecuador, salud, emergencia, consulta médica, laboratorio, radiografía, maternidad, farmacia" />
     <link rel="canonical" href="https://hospitalsanmiguel.org/" />
 
     <!-- Open Graph -->
@@ -39,7 +39,7 @@ const { title, description } = Astro.props;
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Hospital",
+      "@type": "MedicalClinic",
       "name": "Hospital del Día San Miguel",
       "description": description,
       "url": "https://hospitalsanmiguel.org/",
@@ -57,7 +57,7 @@ const { title, description } = Astro.props;
         "Radiología",
         "Laboratorio Clínico",
         "Obstetricia",
-        "Cirugía"
+        "Cirugía Ambulatoria"
       ],
       "openingHours": [
         "Mo-Fr 08:00-12:00",

@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.astro/
+.netlify/
+.env
+*.log
+.DS_Store
+.lighthouseci/

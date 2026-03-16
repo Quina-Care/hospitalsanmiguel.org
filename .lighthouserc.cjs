@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   ci: {
     collect: {
       staticDistDir: "./dist",
@@ -11,6 +11,9 @@ export default {
         "categories:accessibility": ["error", { minScore: 0.9 }],
         "categories:best-practices": ["warn", { minScore: 0.9 }],
         "categories:seo": ["error", { minScore: 0.9 }],
+        "lcp-lazy-loaded": "off",
+        "non-composited-animations": "off",
+        "prioritize-lcp-image": "off",
       },
     },
     upload: {

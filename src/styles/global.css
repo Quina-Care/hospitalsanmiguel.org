@@ -33,7 +33,7 @@
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
-  --meta-color: #9ca3af;
+  --meta-color: #6b7280;
 
   --footer-heading-font: var(--font-sans);
   --footer-heading-size: 11px;
@@ -71,7 +71,7 @@
   font-weight: var(--btn-weight);
   letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   display: inline-block;
   padding: 0.75rem 1.5rem;
 }

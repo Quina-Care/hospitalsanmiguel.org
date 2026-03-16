@@ -11,7 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "lhci autorun --config=.lighthouserc.cjs"
   },
   "dependencies": {
     "@astrojs/netlify": "^7.0.1",

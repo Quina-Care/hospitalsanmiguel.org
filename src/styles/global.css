@@ -1,31 +1,38 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-hsmRed: #ee172c;
-  --color-hsmBlack: #111111;
-  --color-hsmGray: #faf8f5;
-  --font-sans: var(--astro-font-arimo), ui-sans-serif, system-ui, sans-serif;
+  /* Terracotta replaces alarm red — earthy, warm, authoritative without danger */
+  --color-hsmRed: #c44a30;
+  /* Warm espresso replaces cold black — rich, human, grounded */
+  --color-hsmBlack: #1e1812;
+  /* Deep forest green — Amazonian, life, healing — used for labels */
+  --color-hsmForest: #2d5a3d;
+  /* Warm ivory — soft tropical sunlight on a wall */
+  --color-hsmGray: #fdf5ec;
+
+  --font-sans: var(--astro-font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--astro-font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 :root {
   --label-font: var(--font-sans);
-  --label-size: 14px;
+  --label-size: 13px;
   --label-weight: 700;
-  --label-tracking: 0.1em;
-  --label-color: var(--color-hsmRed);
+  --label-tracking: 0.12em;
+  --label-color: var(--color-hsmForest);
 
-  --heading-font: var(--font-sans);
+  --heading-font: var(--font-display);
   --heading-weight: 700;
-  --heading-tracking: -0.025em;
+  --heading-tracking: -0.02em;
   --heading-color: var(--color-hsmBlack);
 
   --body-font: var(--font-sans);
-  --body-size: 18px;
-  --body-line-height: 1.7;
-  --body-color: #5a6575;
+  --body-size: 17px;
+  --body-line-height: 1.75;
+  --body-color: #5a4a3a;
 
   --btn-font: var(--font-sans);
-  --btn-size: 14px;
+  --btn-size: 13px;
   --btn-weight: 700;
   --btn-tracking: 0.08em;
 
@@ -33,13 +40,15 @@
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
-  --meta-color: #7a8694;
+  --meta-color: #8a7060;
 
   --footer-heading-font: var(--font-sans);
   --footer-heading-size: 11px;
   --footer-heading-weight: 700;
   --footer-heading-tracking: 0.3em;
 }
+
+/* ─── Typography ─────────────────────────────────────────── */
 
 .hsm-label {
   font-family: var(--label-font);
@@ -49,6 +58,18 @@
   color: var(--label-color);
   text-transform: uppercase;
   display: block;
+}
+
+/* Headings use the display serif throughout */
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: var(--heading-tracking);
+  color: var(--heading-color);
+}
+
+h3 {
+  font-family: var(--font-sans);
 }
 
 .hsm-body {
@@ -62,8 +83,10 @@
   font-family: var(--body-font);
   font-size: var(--body-size);
   line-height: var(--body-line-height);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
+
+/* ─── Buttons ────────────────────────────────────────────── */
 
 .hsm-btn {
   font-family: var(--btn-font);
@@ -72,7 +95,7 @@
   letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
   transition: background-color 0.25s ease-out, color 0.25s ease-out,
-    border-color 0.25s ease-out, box-shadow 0.25s ease-out;
+    border-color 0.25s ease-out, box-shadow 0.25s ease-out, transform 0.2s ease-out;
   display: inline-block;
   padding: 0.875rem 1.875rem;
 }
@@ -81,28 +104,30 @@
   background-color: var(--color-hsmRed);
   color: white;
   border-radius: 9999px;
-  box-shadow: 0 2px 12px rgba(238, 23, 44, 0.3);
+  box-shadow: 0 2px 14px rgba(196, 74, 48, 0.35);
 }
 .hsm-btn--primary:hover {
-  background-color: var(--color-hsmBlack);
+  background-color: #a33b24;
   color: white;
-  box-shadow: 0 4px 20px rgba(17, 17, 17, 0.25);
+  box-shadow: 0 6px 24px rgba(196, 74, 48, 0.4);
+  transform: translateY(-1px);
 }
 
 .hsm-btn--secondary {
   background-color: var(--color-hsmBlack);
   color: white;
   border-radius: 9999px;
-  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.2);
+  box-shadow: 0 2px 12px rgba(30, 24, 18, 0.25);
 }
 .hsm-btn--secondary:hover {
   background-color: var(--color-hsmRed);
   color: white;
-  box-shadow: 0 4px 20px rgba(238, 23, 44, 0.3);
+  box-shadow: 0 6px 24px rgba(196, 74, 48, 0.4);
+  transform: translateY(-1px);
 }
 
 .hsm-btn--outline {
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
   background: transparent;
   color: white;
   border-radius: 9999px;
@@ -111,8 +136,11 @@
   background-color: white;
   color: var(--color-hsmBlack);
   border-color: white;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
+
+/* ─── Utility ────────────────────────────────────────────── */
 
 .hsm-meta {
   font-family: var(--meta-font);
@@ -132,8 +160,11 @@
   color: white;
 }
 
+/* ─── Base ───────────────────────────────────────────────── */
+
 body {
   font-family: var(--font-sans);
+  color: var(--body-color);
 }
 
 html {
@@ -146,14 +177,13 @@ html {
   }
 }
 
-/* Focus-visible ring for keyboard navigation (WCAG 2.4.7 / 2.4.11) */
+/* Focus-visible ring — WCAG 2.4.7 */
 :focus-visible {
   outline: 3px solid var(--color-hsmRed);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Suppress focus ring on mouse clicks while keeping it for keyboard */
 :focus:not(:focus-visible) {
   outline: none;
 }

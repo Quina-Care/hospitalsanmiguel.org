@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx astro:*)",
+      "Read(//c/Users/d.blaszyk/AppData/Local/Microsoft/WinGet/Packages/Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe//**)",
+      "Bash(ls \"/cmd/\")",
+      "Bash(export PATH=\"$PATH:/c/Users/d.blaszyk/AppData/Roaming/fnm\")",
+      "Bash(fnm env:*)",
+      "Bash(\"/c/Users/d.blaszyk/AppData/Local/Microsoft/WinGet/Packages/Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe/fnm.exe\" env:*)",
+      "Bash(export PATH=\"/c/Users/d.blaszyk/AppData/Local/fnm_multishells/28128_1774171957093:$PATH\")",
+      "Bash(./node_modules/.bin/astro build:*)",
+      "Bash(npm install:*)",
+      "Bash(node node_modules/.bin/astro build)",
+      "Bash(node \"node_modules/@astrojs/core/dist/cli/index.js\" build)",
+      "Bash(node \"node_modules/astro/dist/cli/index.js\" build)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(node \"node_modules/astro/dist/cli/index.js\" check)",
+      "Bash(node -e \":*)",
+      "Bash(node \"node_modules/astro/dist/cli/index.js\" build --outDir ./dist_test)",
+      "Bash(cmd /c \"dir C:\\\\test\\\\hospitalsanmiguel.org\" 2>&1)",
+      "Bash(cmd /c \"dir C:\\\\test\\\\hospitalsanmiguel.org /B\" 2>&1)",
+      "Bash(echo:*)",
+      "Bash(ls -la /c/Users/d.blaszyk/.local/bin/skills*)",
+      "WebFetch(domain:skills.sh)"
+    ]
+  }
+}

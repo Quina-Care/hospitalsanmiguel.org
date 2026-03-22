@@ -5,7 +5,6 @@ import "../styles/global.css";
 
 import hospitalExterior from "../assets/images/hospital-exterior.jpg";
 import laboratorio from "../assets/images/laboratorio.jpg";
-import cirugia from "../assets/images/cirugia.jpg";
 import maternidad from "../assets/images/maternidad.jpg";
 import comunidad from "../assets/images/comunidad.jpg";
 import embarazo from "../assets/images/embarazo.jpg";
@@ -108,9 +107,9 @@ import embarazo from "../assets/images/embarazo.jpg";
       </div>
 
       <!-- Image cards row -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
         <div class="relative rounded-lg overflow-hidden aspect-[4/3] group">
-          <Image src={laboratorio} alt="Laboratorio clínico del Hospital del Día San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+          <Image src={laboratorio} alt="Laboratorio clínico del Hospital del Día San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 768px) 50vw, 100vw" />
           <div class="absolute inset-0 bg-gradient-to-t from-hsmBlack/80 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6">
             <h3 class="text-lg font-bold text-white mb-1">Laboratorio Clínico</h3>
@@ -119,16 +118,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         </div>
 
         <div class="relative rounded-lg overflow-hidden aspect-[4/3] group">
-          <Image src={cirugia} alt="Sala de cirugía del Hospital del Día San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-          <div class="absolute inset-0 bg-gradient-to-t from-hsmBlack/80 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-lg font-bold text-white mb-1">Cirugía Ambulatoria</h3>
-            <p class="text-white/80 text-sm">Ligadura y mini-cesáreas ambulatorias</p>
-          </div>
-        </div>
-
-        <div class="relative rounded-lg overflow-hidden aspect-[4/3] group">
-          <Image src={maternidad} alt="Equipo de maternidad del Hospital del Día San Miguel con bebés recién nacidos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+          <Image src={maternidad} alt="Equipo de maternidad del Hospital del Día San Miguel con bebés recién nacidos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 720]} sizes="(min-width: 768px) 50vw, 100vw" />
           <div class="absolute inset-0 bg-gradient-to-t from-hsmBlack/80 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-6">
             <h3 class="text-lg font-bold text-white mb-1">Cuidado Materno</h3>

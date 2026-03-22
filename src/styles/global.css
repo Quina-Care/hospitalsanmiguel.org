@@ -3,7 +3,7 @@
 @theme inline {
   --color-hsmRed: #ee172c;
   --color-hsmBlack: #111111;
-  --color-hsmGray: #fcfcfc;
+  --color-hsmGray: #faf8f5;
   --font-sans: var(--astro-font-arimo), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -21,19 +21,19 @@
 
   --body-font: var(--font-sans);
   --body-size: 18px;
-  --body-line-height: 1.6;
-  --body-color: #6b7280;
+  --body-line-height: 1.7;
+  --body-color: #5a6575;
 
   --btn-font: var(--font-sans);
   --btn-size: 14px;
   --btn-weight: 700;
-  --btn-tracking: 0.1em;
+  --btn-tracking: 0.08em;
 
   --meta-font: var(--font-sans);
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
-  --meta-color: #6b7280;
+  --meta-color: #7a8694;
 
   --footer-heading-font: var(--font-sans);
   --footer-heading-size: 11px;
@@ -62,7 +62,7 @@
   font-family: var(--body-font);
   font-size: var(--body-size);
   line-height: var(--body-line-height);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .hsm-btn {
@@ -71,40 +71,47 @@
   font-weight: var(--btn-weight);
   letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out,
+    border-color 0.25s ease-out, box-shadow 0.25s ease-out;
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.875rem;
 }
 
 .hsm-btn--primary {
   background-color: var(--color-hsmRed);
   color: white;
-  border-radius: 0.375rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 12px rgba(238, 23, 44, 0.3);
 }
 .hsm-btn--primary:hover {
   background-color: var(--color-hsmBlack);
   color: white;
+  box-shadow: 0 4px 20px rgba(17, 17, 17, 0.25);
 }
 
 .hsm-btn--secondary {
   background-color: var(--color-hsmBlack);
   color: white;
-  border-radius: 0.375rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.2);
 }
 .hsm-btn--secondary:hover {
   background-color: var(--color-hsmRed);
   color: white;
+  box-shadow: 0 4px 20px rgba(238, 23, 44, 0.3);
 }
 
 .hsm-btn--outline {
-  border: 1px solid white;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
   background: transparent;
   color: white;
-  border-radius: 0.375rem;
+  border-radius: 9999px;
 }
 .hsm-btn--outline:hover {
   background-color: white;
   color: var(--color-hsmBlack);
+  border-color: white;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 .hsm-meta {
@@ -143,7 +150,7 @@ html {
 :focus-visible {
   outline: 3px solid var(--color-hsmRed);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* Suppress focus ring on mouse clicks while keeping it for keyboard */

@@ -127,9 +127,26 @@
 
 body {
   font-family: var(--font-sans);
-  scroll-behavior: smooth;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Focus-visible ring for keyboard navigation (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--color-hsmRed);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Suppress focus ring on mouse clicks while keeping it for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
 }

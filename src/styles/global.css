@@ -60,12 +60,11 @@
   display: block;
 }
 
-/* Headings use the display serif throughout */
+/* Headings use the display serif throughout — color set per-element via Tailwind */
 h1, h2 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: var(--heading-tracking);
-  color: var(--heading-color);
 }
 
 h3 {

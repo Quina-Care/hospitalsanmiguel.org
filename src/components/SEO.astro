@@ -1,0 +1,104 @@
+---
+import { getImage } from "astro:assets";
+import hospitalExterior from "../assets/images/hospital-exterior.jpg";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Absolute URL override for the social share image */
+  image?: string;
+  /** Defaults to the site root */
+  canonical?: string;
+}
+
+const SITE_URL = "https://hospitalsanmiguel.org";
+
+const { title, description, image, canonical = `${SITE_URL}/` } = Astro.props;
+
+// Resolve processed image URL so the OG image is always absolute and cache-busted
+const processedOgImage = await getImage({
+  src: hospitalExterior,
+  width: 1200,
+  height: 630,
+  format: "jpeg",
+  quality: 80,
+});
+const ogImage = image ?? `${SITE_URL}${processedOgImage.src}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: "Hospital del Día San Miguel",
+  description,
+  url: `${SITE_URL}/`,
+  telephone: "+593939912321",
+  sameAs: ["https://www.facebook.com/hospsanmiguel"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Miguel Sedano 1",
+    addressLocality: "Puerto El Carmen del Putumayo",
+    addressRegion: "Sucumbíos",
+    addressCountry: "EC",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -0.031,
+    longitude: -76.518,
+  },
+  medicalSpecialty: [
+    "Consulta General",
+    "Emergencia",
+    "Radiología",
+    "Laboratorio Clínico",
+    "Obstetricia",
+  ],
+  openingHours: ["Mo-Fr 08:00-12:00", "Mo-Fr 14:00-16:00", "Su 08:00-12:00"],
+  currenciesAccepted: "USD",
+  priceRange: "$",
+  image: ogImage,
+};
+---
+
+<!-- Primary -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content="#ee172c" />
+<link rel="canonical" href={canonical} />
+
+<!-- Indexing -->
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Hospital del Día San Miguel" />
+
+<!-- Local SEO -->
+<meta name="geo.region" content="EC-SE" />
+<meta name="geo.placename" content="Puerto El Carmen de Putumayo, Ecuador" />
+<meta name="geo.position" content="-0.031;-76.518" />
+<meta name="ICBM" content="-0.031, -76.518" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="Hospital del Día San Miguel" />
+<meta property="og:locale" content="es_EC" />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Hospital del Día San Miguel — El Carmen de Putumayo, Ecuador" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content="Hospital del Día San Miguel — El Carmen de Putumayo, Ecuador" />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+<!-- Assets -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" href="/images/logo-hospitalsanmiguel.min.svg" as="image" type="image/svg+xml" />

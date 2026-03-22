@@ -1,77 +1,22 @@
 ---
+import SEO from "../components/SEO.astro";
+
 interface Props {
   title: string;
   description: string;
+  /** Absolute URL for the social share image (optional, falls back to default OG image) */
+  image?: string;
+  /** Canonical URL (optional, defaults to site root) */
+  canonical?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, canonical } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#ee172c" />
-
-    <!-- SEO -->
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Hospital del Día San Miguel" />
-    <meta name="keywords" content="hospital del día, San Miguel, El Carmen de Putumayo, Ecuador, salud, emergencia, consulta médica, laboratorio, radiografía, maternidad, farmacia" />
-    <link rel="canonical" href="https://hospitalsanmiguel.org/" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://hospitalsanmiguel.org/" />
-    <meta property="og:site_name" content="Hospital del Día San Miguel" />
-    <meta property="og:locale" content="es_EC" />
-    <meta property="og:image" content="/images/hospital-exterior.jpg" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/images/hospital-exterior.jpg" />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "Hospital del Día San Miguel",
-      "description": description,
-      "url": "https://hospitalsanmiguel.org/",
-      "telephone": "+593939912321",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Miguel Sedano 1",
-        "addressLocality": "Puerto El Carmen del Putumayo",
-        "addressRegion": "Putumayo",
-        "addressCountry": "EC"
-      },
-      "medicalSpecialty": [
-        "Consulta General",
-        "Emergencia",
-        "Radiología",
-        "Laboratorio Clínico",
-        "Obstetricia",
-        "Cirugía Ambulatoria"
-      ],
-      "openingHours": [
-        "Mo-Fr 08:00-12:00",
-        "Mo-Fr 14:00-16:00",
-        "Su 08:00-12:00"
-      ],
-      "currenciesAccepted": "USD",
-      "image": "/images/hospital-exterior.jpg"
-    })} />
-
-    <title>{title}</title>
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/images/logo-hospitalsanmiguel.min.svg" as="image" type="image/svg+xml" />
+    <SEO {title} {description} {image} {canonical} />
   </head>
   <body class="bg-white text-hsmBlack">
     <slot />

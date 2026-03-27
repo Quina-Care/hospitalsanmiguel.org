@@ -24,7 +24,13 @@
       "Bash(ls -la /c/Users/d.blaszyk/.local/bin/skills*)",
       "WebFetch(domain:skills.sh)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(mv \"hospital-exterior.jpg\" \"hospital_exterior.jpg\")",
+      "Bash(mv \"laboratorio.jpg\" \"laboratory.jpg\")",
+      "Bash(mv \"laboratorium.jpg\" \"laboratory_room.jpg\")",
+      "Bash(mv \"maternidad.jpg\" \"maternity.jpg\")",
+      "Bash(mv \"cirugia.jpg\" \"surgery.jpg\")",
+      "Bash(ls:*)"
     ]
   }
 }

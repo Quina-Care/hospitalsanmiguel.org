@@ -21,9 +21,10 @@
 
   /* Effra = clean humanist sans for headings, nav, UI elements */
   --font-effra: "Effra", sans-serif;
-  /* Tailwind font-sans utility → Effra */
-  --font-sans: "Effra", sans-serif;
-  /* Lora = warm, trustworthy serif for body text and paragraphs */
+  /* font-sans = Lora — Tailwind preflight sets body { font-family: var(--font-sans) }
+     so this must be Lora for body text to render correctly */
+  --font-sans: var(--astro-font-lora), "Lora", Georgia, serif;
+  /* alias for explicit use in component classes */
   --font-body: var(--astro-font-lora), "Lora", Georgia, serif;
 }
 
@@ -349,7 +350,7 @@ button {
 
 /* Default body font is Lora — warm, readable, trustworthy */
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   color: var(--body-color);
   scroll-behavior: smooth;
 }

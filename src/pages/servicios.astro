@@ -1,0 +1,370 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import laboratorio from "../assets/images/laboratorio.jpg";
+import maternidad from "../assets/images/maternidad.jpg";
+import cirugia from "../assets/images/cirugia.jpg";
+import comunidad from "../assets/images/comunidad.jpg";
+import embarazo from "../assets/images/embarazo.jpg";
+---
+
+<Layout
+  title="Servicios | Hospital San Miguel"
+  description="Todos los servicios del Hospital San Miguel en El Carmen de Putumayo: consulta externa, hospitalización, emergencia 24/7, laboratorio clínico, radiología y farmacia."
+  canonical="https://hospitalsanmiguel.org/servicios"
+>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-md border-b border-gray-100/50 shadow-sm">
+    <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/images/logo-hospitalsanmiguel.min.svg" alt="Logo Hospital San Miguel" class="h-14 w-auto" width="56" height="56" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/#servicios" class="text-sm font-bold uppercase tracking-[0.15em] text-dark hover:text-primary transition-colors">Servicios</a>
+        <a href="/#precios" class="text-sm font-bold uppercase tracking-[0.15em] text-dark hover:text-primary transition-colors">Precios</a>
+        <a href="/#nosotros" class="text-sm font-bold uppercase tracking-[0.15em] text-dark hover:text-primary transition-colors">Nosotros</a>
+        <a href="/#contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-dark hover:text-primary transition-colors">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Page hero -->
+    <section class="pt-40 pb-16 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Volver al inicio
+        </a>
+        <span class="hsm-label mb-3">Nuestros Servicios</span>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-dark mt-2">
+          Atención médica integral
+        </h1>
+        <p class="hsm-body mt-6 max-w-2xl">
+          El Hospital San Miguel ofrece una amplia gama de servicios médicos para la comunidad de El Carmen de Putumayo y las comunidades vecinas de Ecuador y Colombia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick nav -->
+    <nav class="sticky top-20 z-40 bg-white border-b border-gray-100" aria-label="Navegación de servicios">
+      <div class="max-w-[1400px] mx-auto px-6 overflow-x-auto">
+        <ul class="flex gap-6 py-4 text-sm font-bold uppercase tracking-[0.1em] whitespace-nowrap">
+          <li><a href="#consulta-externa" class="text-gray-400 hover:text-primary transition-colors">Consulta Externa</a></li>
+          <li><a href="#hospitalizacion" class="text-gray-400 hover:text-primary transition-colors">Hospitalización</a></li>
+          <li><a href="#emergencia" class="text-gray-400 hover:text-primary transition-colors">Emergencia</a></li>
+          <li><a href="#laboratorio" class="text-gray-400 hover:text-primary transition-colors">Laboratorio</a></li>
+          <li><a href="#radiologia" class="text-gray-400 hover:text-primary transition-colors">Radiología</a></li>
+          <li><a href="#farmacia" class="text-gray-400 hover:text-primary transition-colors">Farmacia</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════
+         CONSULTA EXTERNA
+         ═══════════════════════════════════ -->
+    <section id="consulta-externa" class="py-24 bg-white scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <Image
+              src={laboratorio}
+              alt="Consulta externa del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div>
+            <span class="hsm-label mb-3">Consulta Externa</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Atención médica general
+            </h2>
+
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Medicina General</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Control de salud incluido perfil de riesgo cardiovascular y control de hemoglobina</li>
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Enfermedades crónicas: diabetes, hipertensión, artritis reumática</li>
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Enfermedades agudas: infecciones urinarias, neumonía, gastritis</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Pediatría</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Control de salud incluido tamizaje</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Obstetricia</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Control de embarazo incluido ecografías y monitoreos fetales</li>
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Cultivo de estreptococo grupo B (GBS)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Ginecología</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Planificación familiar: preservativos, la pastilla, inyección, la T y la tubectomía</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Cirugía</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Cirugías agudas: apendicectomía abierta y sangrados</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Enfermedades Tropicales</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Dengue, chikungunya, zika, fiebre amarilla y leptospirosis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         HOSPITALIZACIÓN
+         ═══════════════════════════════════ -->
+    <section id="hospitalizacion" class="py-24 bg-hsmGray scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="md:order-2">
+            <Image
+              src={maternidad}
+              alt="Hospitalización del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div class="md:order-1">
+            <span class="hsm-label mb-3">Hospitalización</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Observación y cuidado continuo
+            </h2>
+            <div class="space-y-6">
+              <div>
+                <ul class="space-y-3">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Observación hasta 24 horas después de un accidente de tránsito o una apendicectomía abierta</li>
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Observación hasta traslado a un centro médico de mayor complejidad</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         EMERGENCIA
+         ═══════════════════════════════════ -->
+    <section id="emergencia" class="py-24 bg-white scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <Image
+              src={comunidad}
+              alt="Emergencia 24/7 del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div>
+            <span class="hsm-label mb-3">Emergencia 24/7</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Siempre disponibles
+            </h2>
+            <div class="space-y-6">
+              <ul class="space-y-3">
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Accidentes de tránsito, incluido transfusión de sangre</li>
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Mordeduras de serpientes, incluido tratamiento con antiveneno</li>
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Sepsis por infecciones avanzadas</li>
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Infartos coronarios, incluido tratamiento con nitroglicerina</li>
+              </ul>
+            </div>
+            <p class="text-xs text-gray-500 mt-8">La atención de emergencia está garantizada sin condición de pago, conforme a la Constitución del Ecuador.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         LABORATORIO
+         ═══════════════════════════════════ -->
+    <section id="laboratorio" class="py-24 bg-hsmGray scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="md:order-2">
+            <Image
+              src={cirugia}
+              alt="Laboratorio clínico del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div class="md:order-1">
+            <span class="hsm-label mb-3">Laboratorio Clínico</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Análisis clínicos propios
+            </h2>
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Hematología y Coagulación</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Hemograma, tiempos de coagulación, tipificación sanguínea</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Química Clínica</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Función renal, función hepática, amilasa, perfil lipídico</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Electrolitos</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Potasio, sodio, cloruro y calcio</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Pruebas Rápidas</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>VIH, sífilis, hepatitis</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Microscopía</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Sedimento de orina, parasitológico en heces, tinción de Gram, frotis de sangre, microscopía de fluorescencia</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Biología Molecular</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Virus del Papiloma Humano (VPH), perfil tiroideo (FSH, T4)</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-dark uppercase tracking-wide mb-2">Microbiología</h3>
+                <ul class="space-y-1">
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Cultivo de orina incluido antibiograma</li>
+                  <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Cultivo de estreptococo grupo B (GBS)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         RADIOLOGÍA
+         ═══════════════════════════════════ -->
+    <section id="radiologia" class="py-24 bg-white scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <Image
+              src={embarazo}
+              alt="Radiología del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div>
+            <span class="hsm-label mb-3">Radiología</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Diagnóstico por imágenes
+            </h2>
+            <div class="space-y-6">
+              <ul class="space-y-3">
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Rayos X</li>
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Ecografía abdominal, transvaginal y lineal de los tejidos blandos</li>
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Electrocardiograma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         FARMACIA
+         ═══════════════════════════════════ -->
+    <section id="farmacia" class="py-24 bg-hsmGray scroll-mt-36">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="md:order-2">
+            <Image
+              src={laboratorio}
+              alt="Farmacia del Hospital San Miguel"
+              class="rounded-2xl w-full"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div class="md:order-1">
+            <span class="hsm-label mb-3">Farmacia</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-dark mt-2 mb-8">
+              Medicamentos esenciales
+            </h2>
+            <div class="space-y-6">
+              <ul class="space-y-3">
+                <li class="flex gap-2 text-sm text-gray-600"><span class="text-primary mt-0.5 flex-shrink-0">—</span>Medicamentos e insumos intravenosos y orales para tratar la gran mayoría de las enfermedades de la zona</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark py-12">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <p class="text-white/60 text-sm leading-relaxed">
+        Hospital San Miguel al servicio de la comunidad de El Carmen de Putumayo, Ecuador.
+      </p>
+      <div class="border-t border-white/5 mt-6 pt-6">
+        <p class="hsm-meta text-white/60">
+          &copy; 2026 Hospital San Miguel &middot; Unicódigo MSP: 78550
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</Layout>

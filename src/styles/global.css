@@ -11,63 +11,54 @@
 }
 
 @theme {
-  /* Brand red — stays exactly as defined */
-  --color-hsmRed: #ef162b;
-  /* Warm espresso — rich, deep, human */
-  --color-hsmBlack: #1e1812;
-  /* Sienna amber — earthy, warm, Amazonian; used for labels & accents */
-  --color-hsmAmber: #b8581e;
-  /* Warm cream — soft tropical light; primary light background */
-  --color-hsmGray: #fdf5ec;
-}
+  /* ── Palette ── publicly named, reusable everywhere ──────── */
+  --color-primary: #ef162b;   /* brand red — fixed */
+  --color-dark:    #111111;   /* near-black — headings, dark sections */
+  --color-light:   #fcfcfc;   /* near-white — light section backgrounds */
 
-@theme {
-  /* Effra = clean humanist sans for headings, nav, UI elements */
-  --font-effra: "Effra", sans-serif;
-  /* font-sans = Lora — Tailwind preflight applies this to body via its reset */
-  --font-sans: "Arimo", ui-sans-serif, sans-serif;
-  /* alias for explicit use in component classes */
-  --font-body: "Arimo", ui-sans-serif, sans-serif;
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-effra: "Effra", sans-serif;          /* display / headings */
+  --font-sans:  "Arimo", ui-sans-serif, sans-serif; /* body / UI */
 }
 
 /* ──────────────────────────────────────────────
    Design tokens: typography & buttons
    ────────────────────────────────────────────── */
 :root {
-  /* Section labels (small uppercase accents) */
-  --label-font: var(--font-effra);
-  --label-size: 13px;
+  /* Section labels */
+  --label-font: var(--font-sans);
+  --label-size: 14px;
   --label-weight: 700;
-  --label-tracking: 0.12em;
-  --label-color: var(--color-hsmAmber);
+  --label-tracking: 0.1em;
+  --label-color: var(--color-primary);
 
-  /* Section headings — Effra */
+  /* Section headings */
   --heading-font: var(--font-effra);
   --heading-weight: 700;
   --heading-tracking: -0.025em;
-  --heading-color: var(--color-hsmBlack);
+  --heading-color: var(--color-dark);
 
-  /* Body / description text — Lora */
-  --body-font: var(--font-body);
+  /* Body / description text */
+  --body-font: var(--font-sans);
   --body-size: 18px;
-  --body-line-height: 1.78;
-  --body-color: #5c4535;
+  --body-line-height: 1.6;
+  --body-color: #6b7280;
 
-  /* Buttons — Effra (clean, legible) */
-  --btn-font: var(--font-effra);
+  /* Buttons */
+  --btn-font: var(--font-sans);
   --btn-size: 14px;
   --btn-weight: 700;
-  --btn-tracking: 0.08em;
+  --btn-tracking: 0.1em;
 
-  /* Meta text (dates, categories, badges) — Effra */
-  --meta-font: var(--font-effra);
+  /* Meta text */
+  --meta-font: var(--font-sans);
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
-  --meta-color: #9c7a5e;
+  --meta-color: #9ca3af;
 
-  /* Footer headings — Effra */
-  --footer-heading-font: var(--font-effra);
+  /* Footer headings */
+  --footer-heading-font: var(--font-sans);
   --footer-heading-size: 11px;
   --footer-heading-weight: 700;
   --footer-heading-tracking: 0.3em;
@@ -132,7 +123,7 @@ h3 {
 }
 
 .hsm-btn--primary {
-  background-color: var(--color-hsmRed);
+  background-color: var(--color-primary);
   color: white;
   border-radius: 9999px;
   box-shadow: 0 2px 14px rgba(239, 22, 43, 0.3);
@@ -145,13 +136,13 @@ h3 {
 }
 
 .hsm-btn--secondary {
-  background-color: var(--color-hsmBlack);
+  background-color: var(--color-dark);
   color: white;
   border-radius: 9999px;
-  box-shadow: 0 2px 12px rgba(30, 24, 18, 0.25);
+  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.25);
 }
 .hsm-btn--secondary:hover {
-  background-color: var(--color-hsmRed);
+  background-color: var(--color-primary);
   color: white;
   box-shadow: 0 6px 24px rgba(239, 22, 43, 0.4);
   transform: translateY(-1px);
@@ -165,27 +156,27 @@ h3 {
 }
 .hsm-btn--outline:hover {
   background-color: white;
-  color: var(--color-hsmBlack);
+  color: var(--color-dark);
   border-color: white;
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
 }
 
 .hsm-btn--ghost {
-  color: var(--color-hsmRed);
+  color: var(--color-primary);
   background: transparent;
 }
 .hsm-btn--ghost:hover {
-  color: var(--color-hsmBlack);
+  color: var(--color-dark);
 }
 
 .hsm-btn--white {
   background-color: white;
-  color: var(--color-hsmRed);
+  color: var(--color-primary);
   border-radius: 9999px;
 }
 .hsm-btn--white:hover {
-  background-color: var(--color-hsmBlack);
+  background-color: var(--color-dark);
   color: white;
 }
 
@@ -251,7 +242,7 @@ button {
 .prose-article > p:first-of-type::first-letter {
   font-size: 4.5rem;
   font-weight: 700;
-  color: var(--color-hsmRed);
+  color: var(--color-primary);
   float: left;
   margin-right: 0.75rem;
   line-height: 1;
@@ -289,7 +280,7 @@ button {
 }
 
 .prose-article a {
-  color: var(--color-hsmRed);
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -299,7 +290,7 @@ button {
 }
 
 .prose-article blockquote {
-  border-left: 4px solid var(--color-hsmRed);
+  border-left: 4px solid var(--color-primary);
   padding: 1rem 0 1rem 2rem;
   margin: 3rem 0;
   font-style: italic;
@@ -365,7 +356,7 @@ body {
 
 /* Focus-visible ring — WCAG 2.4.7: 3px minimum, high contrast */
 :focus-visible {
-  outline: 3px solid var(--color-hsmRed);
+  outline: 3px solid var(--color-primary);
   outline-offset: 4px;
   border-radius: 4px;
 }

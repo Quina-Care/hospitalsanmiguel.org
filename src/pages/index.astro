@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 
 import hospitalExterior from "../assets/images/hospital_exterior.jpg";
 import externalConsultLanding from "../assets/images/external_consult_landing.jpg";
@@ -556,23 +557,7 @@ import emergencyLanding from "../assets/images/emergency_landing.jpg";
   <!-- ═══════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════ -->
-  <footer class="bg-dark py-16">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <p class="text-white/60 text-sm leading-relaxed">
-        Hospital San Miguel brinda atención médica de calidad a las comunidades de Putumayo.
-      </p>
-      <div class="mt-6 space-y-2">
-        <p class="text-white/50 text-xs leading-relaxed">Los pacientes tienen derecho a recibir atención digna, información clara sobre su tratamiento y confidencialidad de sus datos, conforme a la Ley de Derechos y Amparo del Paciente.</p>
-        <p class="text-white/50 text-xs leading-relaxed">Al contactarnos por WhatsApp u otros medios, sus datos personales serán tratados únicamente para fines de atención médica, conforme a la Ley Orgánica de Protección de Datos Personales.</p>
-        <p class="text-white/50 text-xs leading-relaxed">Todas las personas que aparecen en las fotografías han dado su consentimiento para el uso de sus imágenes.</p>
-      </div>
-      <div class="border-t border-white/5 mt-6 pt-6">
-        <p class="hsm-meta text-white/60">
-          &copy; 2026 Hospital San Miguel &middot; Unicódigo: 78550
-        </p>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 
   <!-- Minimal JS for mobile menu -->
   <script>

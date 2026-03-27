@@ -22,7 +22,9 @@
       "Bash(cmd /c \"dir C:\\\\test\\\\hospitalsanmiguel.org /B\" 2>&1)",
       "Bash(echo:*)",
       "Bash(ls -la /c/Users/d.blaszyk/.local/bin/skills*)",
-      "WebFetch(domain:skills.sh)"
+      "WebFetch(domain:skills.sh)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

@@ -125,7 +125,7 @@ h3 {
 .hsm-btn--primary {
   background-color: var(--color-primary);
   color: white;
-  border-radius: 9999px;
+  border-radius: 0.375rem;
   box-shadow: 0 2px 14px rgba(239, 22, 43, 0.3);
 }
 .hsm-btn--primary:hover {
@@ -138,7 +138,7 @@ h3 {
 .hsm-btn--secondary {
   background-color: var(--color-dark);
   color: white;
-  border-radius: 9999px;
+  border-radius: 0.375rem;
   box-shadow: 0 2px 12px rgba(17, 17, 17, 0.25);
 }
 .hsm-btn--secondary:hover {
@@ -152,7 +152,7 @@ h3 {
   border: 2px solid rgba(255, 255, 255, 0.8);
   background: transparent;
   color: white;
-  border-radius: 9999px;
+  border-radius: 0.375rem;
 }
 .hsm-btn--outline:hover {
   background-color: white;
@@ -173,7 +173,7 @@ h3 {
 .hsm-btn--white {
   background-color: white;
   color: var(--color-primary);
-  border-radius: 9999px;
+  border-radius: 0.375rem;
 }
 .hsm-btn--white:hover {
   background-color: var(--color-dark);

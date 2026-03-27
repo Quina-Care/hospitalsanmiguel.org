@@ -2,12 +2,16 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-import hospitalExterior from "../assets/images/hospital-exterior.jpg";
-import laboratorio from "../assets/images/laboratorio.jpg";
-import maternidad from "../assets/images/maternidad.jpg";
-import comunidad from "../assets/images/comunidad.jpg";
-import embarazo from "../assets/images/embarazo.jpg";
-import cirugia from "../assets/images/cirugia.jpg";
+import hospitalExterior from "../assets/images/hospital_exterior.jpg";
+import externalConsultLanding from "../assets/images/external_consult_landing.jpg";
+import hospitalizationLanding from "../assets/images/hospitalization_landing.jpg";
+import radiologyConsultLanding from "../assets/images/radiology_consult_landing.jpg";
+import pharmacyLanding from "../assets/images/pharmacy_landing.jpg";
+import laboratoryLanding from "../assets/images/laboratory_landing.jpg";
+import maternity from "../assets/images/maternity.jpg";
+import community from "../assets/images/community.jpg";
+import pregnancy from "../assets/images/pregnancy.jpg";
+import emergencyLanding from "../assets/images/emergency_landing.jpg";
 ---
 
 <Layout
@@ -132,7 +136,7 @@ import cirugia from "../assets/images/cirugia.jpg";
         <!-- Service cards -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="/servicios#consulta-externa" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={hospitalExterior} alt="Consulta externa del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={externalConsultLanding} alt="Consulta externa del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Consulta Externa</h3>
@@ -141,7 +145,7 @@ import cirugia from "../assets/images/cirugia.jpg";
           </a>
 
           <a href="/servicios#hospitalizacion" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={maternidad} alt="Hospitalización del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={hospitalizationLanding} alt="Hospitalización del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Hospitalización</h3>
@@ -150,7 +154,7 @@ import cirugia from "../assets/images/cirugia.jpg";
           </a>
 
           <a href="/servicios#laboratorio" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={laboratorio} alt="Laboratorio clínico del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={laboratoryLanding} alt="Laboratorio clínico del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Laboratorio Clínico</h3>
@@ -159,7 +163,7 @@ import cirugia from "../assets/images/cirugia.jpg";
           </a>
 
           <a href="/servicios#emergencia" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={cirugia} alt="Emergencia 24/7 del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={emergencyLanding} alt="Emergencia 24/7 del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Emergencia 24/7</h3>
@@ -168,7 +172,7 @@ import cirugia from "../assets/images/cirugia.jpg";
           </a>
 
           <a href="/servicios#radiologia" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={embarazo} alt="Radiología del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={radiologyConsultLanding} alt="Radiología del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Radiología</h3>
@@ -177,7 +181,7 @@ import cirugia from "../assets/images/cirugia.jpg";
           </a>
 
           <a href="/servicios#farmacia" class="relative rounded-3xl overflow-hidden aspect-[4/3] group block">
-            <Image src={comunidad} alt="Farmacia del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <Image src={pharmacyLanding} alt="Farmacia del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <h3 class="text-lg font-bold text-white mb-1">Farmacia</h3>
@@ -307,7 +311,7 @@ import cirugia from "../assets/images/cirugia.jpg";
          ═══════════════════════════════════════════ -->
     <section id="nosotros" aria-labelledby="nosotros-heading" class="relative py-24 overflow-hidden">
       <Image
-        src={comunidad}
+        src={community}
         alt="Actividad comunitaria de salud organizada por el Hospital San Miguel"
         class="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
@@ -342,7 +346,7 @@ import cirugia from "../assets/images/cirugia.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src={embarazo}
+              src={pregnancy}
               alt="Servicio de atención prenatal del Hospital San Miguel"
               class="rounded-2xl w-full shadow-md"
               loading="lazy"

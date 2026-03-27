@@ -2,12 +2,16 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-import hospitalExterior from "../assets/images/hospital-exterior.jpg";
-import laboratorio from "../assets/images/laboratorio.jpg";
-import maternidad from "../assets/images/maternidad.jpg";
-import cirugia from "../assets/images/cirugia.jpg";
-import comunidad from "../assets/images/comunidad.jpg";
-import embarazo from "../assets/images/embarazo.jpg";
+import hospitalExterior from "../assets/images/hospital_exterior.jpg";
+import externalConsultService from "../assets/images/external_consult_service.jpg";
+import radiologyConsultService from "../assets/images/radiology_consult_service.jpg";
+import hospitalizationService from "../assets/images/hospitalization_service.jpg";
+import laboratoryService from "../assets/images/laboratory_service.jpg";
+import pharmacyService from "../assets/images/pharmacy_service.jpg";
+import emergencyService from "../assets/images/emergency_service.jpg";
+import maternity from "../assets/images/maternity.jpg";
+import community from "../assets/images/community.jpg";
+import pregnancy from "../assets/images/pregnancy.jpg";
 ---
 
 <Layout
@@ -71,7 +75,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <Image
-              src={hospitalExterior}
+              src={externalConsultService}
               alt="Consulta externa del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"
@@ -146,7 +150,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="md:order-2">
             <Image
-              src={maternidad}
+              src={hospitalizationService}
               alt="Hospitalización del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"
@@ -182,7 +186,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <Image
-              src={cirugia}
+              src={emergencyService}
               alt="Emergencia 24/7 del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"
@@ -219,7 +223,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="md:order-2">
             <Image
-              src={laboratorio}
+              src={laboratoryService}
               alt="Laboratorio clínico del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"
@@ -292,7 +296,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <Image
-              src={embarazo}
+              src={radiologyConsultService}
               alt="Radiología del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"
@@ -327,7 +331,7 @@ import embarazo from "../assets/images/embarazo.jpg";
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="md:order-2">
             <Image
-              src={comunidad}
+              src={pharmacyService}
               alt="Farmacia del Hospital San Miguel"
               class="rounded-2xl w-full"
               loading="lazy"

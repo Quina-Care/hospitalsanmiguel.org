@@ -28,7 +28,7 @@ const ogImage = image ?? `${SITE_URL}${processedOgImage.src}`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  name: "Hospital del Día San Miguel",
+  name: "Hospital San Miguel",
   description,
   url: `${SITE_URL}/`,
   telephone: "+593939912321",
@@ -69,7 +69,7 @@ const structuredData = {
 
 <!-- Indexing -->
 <meta name="robots" content="index, follow" />
-<meta name="author" content="Hospital del Día San Miguel" />
+<meta name="author" content="Hospital San Miguel" />
 
 <!-- Local SEO -->
 <meta name="geo.region" content="EC-SE" />
@@ -82,20 +82,20 @@ const structuredData = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
-<meta property="og:site_name" content="Hospital del Día San Miguel" />
+<meta property="og:site_name" content="Hospital San Miguel" />
 <meta property="og:locale" content="es_EC" />
 <meta property="og:locale:alternate" content="es_CO" />
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Hospital del Día San Miguel — El Carmen de Putumayo, Ecuador" />
+<meta property="og:image:alt" content="Hospital San Miguel — El Carmen de Putumayo, Ecuador" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:image:alt" content="Hospital del Día San Miguel — El Carmen de Putumayo, Ecuador" />
+<meta name="twitter:image:alt" content="Hospital San Miguel — El Carmen de Putumayo, Ecuador" />
 
 <!-- Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

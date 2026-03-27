@@ -11,7 +11,7 @@
 
 @theme {
   /* Terracotta — earthy, warm, authoritative without danger */
-  --color-hsmRed: #c44a30;
+  --color-hsmRed: #ef162b;
   /* Warm espresso — rich, human, grounded */
   --color-hsmBlack: #1e1812;
   /* Deep forest green — Amazonian, life, healing */
@@ -120,12 +120,12 @@ h3 {
   background-color: var(--color-hsmRed);
   color: white;
   border-radius: 9999px;
-  box-shadow: 0 2px 14px rgba(196, 74, 48, 0.35);
+  box-shadow: 0 2px 14px rgba(239, 22, 43, 0.35);
 }
 .hsm-btn--primary:hover {
-  background-color: #a33b24;
+  background-color: #bf1122;
   color: white;
-  box-shadow: 0 6px 24px rgba(196, 74, 48, 0.4);
+  box-shadow: 0 6px 24px rgba(239, 22, 43, 0.4);
   transform: translateY(-1px);
 }
 
@@ -138,7 +138,7 @@ h3 {
 .hsm-btn--secondary:hover {
   background-color: var(--color-hsmRed);
   color: white;
-  box-shadow: 0 6px 24px rgba(196, 74, 48, 0.4);
+  box-shadow: 0 6px 24px rgba(239, 22, 43, 0.4);
   transform: translateY(-1px);
 }
 

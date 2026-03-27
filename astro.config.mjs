@@ -17,10 +17,10 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: "Arimo",
-      cssVariable: "--astro-font-arimo",
+      name: "Lora",
+      cssVariable: "--astro-font-lora",
       weights: [400, 500, 600, 700],
-      styles: ["normal"],
+      styles: ["normal", "italic"],
       subsets: ["latin"],
     },
   ],

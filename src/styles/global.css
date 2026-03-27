@@ -10,57 +10,61 @@
 }
 
 @theme {
-  /* Terracotta — earthy, warm, authoritative without danger */
+  /* Brand red — stays exactly as defined */
   --color-hsmRed: #ef162b;
-  /* Warm espresso — rich, human, grounded */
+  /* Warm espresso — rich, deep, human */
   --color-hsmBlack: #1e1812;
-  /* Deep forest green — Amazonian, life, healing */
-  --color-hsmForest: #2d5a3d;
-  /* Warm ivory — soft tropical sunlight on a wall */
+  /* Sienna amber — earthy, warm, Amazonian; used for labels & accents */
+  --color-hsmAmber: #b8581e;
+  /* Warm cream — soft tropical light; primary light background */
   --color-hsmGray: #fdf5ec;
 
+  /* Effra = clean humanist sans for headings, nav, UI elements */
   --font-effra: "Effra", sans-serif;
-  --font-sans: var(--astro-font-arimo), "Arimo", sans-serif;
+  /* Tailwind font-sans utility → Effra */
+  --font-sans: "Effra", sans-serif;
+  /* Lora = warm, trustworthy serif for body text and paragraphs */
+  --font-body: var(--astro-font-lora), "Lora", Georgia, serif;
 }
 
 /* ──────────────────────────────────────────────
    Design tokens: typography & buttons
    ────────────────────────────────────────────── */
 :root {
-  /* Section labels (small uppercase) */
-  --label-font: var(--font-sans);
+  /* Section labels (small uppercase accents) */
+  --label-font: var(--font-effra);
   --label-size: 13px;
   --label-weight: 700;
   --label-tracking: 0.12em;
-  --label-color: var(--color-hsmForest);
+  --label-color: var(--color-hsmAmber);
 
-  /* Section headings */
+  /* Section headings — Effra */
   --heading-font: var(--font-effra);
   --heading-weight: 700;
   --heading-tracking: -0.025em;
   --heading-color: var(--color-hsmBlack);
 
-  /* Body / description text */
-  --body-font: var(--font-sans);
-  --body-size: 17px;
-  --body-line-height: 1.75;
-  --body-color: #5a4a3a;
+  /* Body / description text — Lora */
+  --body-font: var(--font-body);
+  --body-size: 18px;
+  --body-line-height: 1.78;
+  --body-color: #5c4535;
 
-  /* Buttons */
-  --btn-font: var(--font-sans);
-  --btn-size: 13px;
+  /* Buttons — Effra (clean, legible) */
+  --btn-font: var(--font-effra);
+  --btn-size: 14px;
   --btn-weight: 700;
   --btn-tracking: 0.08em;
 
-  /* Meta text (dates, categories, badges) */
-  --meta-font: var(--font-sans);
+  /* Meta text (dates, categories, badges) — Effra */
+  --meta-font: var(--font-effra);
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
-  --meta-color: #8a7060;
+  --meta-color: #9c7a5e;
 
-  /* Footer headings */
-  --footer-heading-font: var(--font-sans);
+  /* Footer headings — Effra */
+  --footer-heading-font: var(--font-effra);
   --footer-heading-size: 11px;
   --footer-heading-weight: 700;
   --footer-heading-tracking: 0.3em;
@@ -78,6 +82,7 @@
   display: block;
 }
 
+/* Headings — Effra throughout */
 h1,
 h2 {
   font-family: var(--font-effra);
@@ -86,9 +91,10 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-effra);
 }
 
+/* Body text — Lora: warm, trustworthy, readable */
 .hsm-body {
   font-family: var(--body-font);
   font-size: var(--body-size);
@@ -100,7 +106,7 @@ h3 {
   font-family: var(--body-font);
   font-size: var(--body-size);
   line-height: var(--body-line-height);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ─── Buttons ────────────────────────────────────────────── */
@@ -113,14 +119,20 @@ h3 {
   text-transform: uppercase;
   transition: all 0.3s;
   display: inline-block;
-  padding: 0.875rem 1.875rem;
+  /* min 48px height for touch targets (WCAG 2.5.5) */
+  padding: 1rem 2rem;
+  min-height: 48px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hsm-btn--primary {
   background-color: var(--color-hsmRed);
   color: white;
   border-radius: 9999px;
-  box-shadow: 0 2px 14px rgba(239, 22, 43, 0.35);
+  box-shadow: 0 2px 14px rgba(239, 22, 43, 0.3);
 }
 .hsm-btn--primary:hover {
   background-color: #bf1122;
@@ -143,7 +155,7 @@ h3 {
 }
 
 .hsm-btn--outline {
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   background: transparent;
   color: white;
   border-radius: 9999px;
@@ -204,14 +216,22 @@ h3 {
   scrollbar-width: none;
 }
 
+/* ─── Nav & interactive — always Effra ──────────────────── */
+
+nav,
+header nav a,
+button {
+  font-family: var(--font-effra);
+}
+
 /* ─── Prose ──────────────────────────────────────────────── */
 
 .prose-article,
 .prose-landing > p {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 18px;
-  line-height: 1.8;
-  color: #374151;
+  line-height: 1.85;
+  color: #4a3728;
 }
 
 .prose-landing > p {
@@ -327,8 +347,9 @@ h3 {
 
 /* ─── Base ───────────────────────────────────────────────── */
 
+/* Default body font is Lora — warm, readable, trustworthy */
 body {
-  font-family: var(--font-effra);
+  font-family: var(--font-body);
   color: var(--body-color);
   scroll-behavior: smooth;
 }
@@ -339,13 +360,20 @@ body {
   }
 }
 
-/* Focus-visible ring — WCAG 2.4.7 */
+/* Focus-visible ring — WCAG 2.4.7: 3px minimum, high contrast */
 :focus-visible {
   outline: 3px solid var(--color-hsmRed);
-  outline-offset: 3px;
+  outline-offset: 4px;
   border-radius: 4px;
 }
 
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+/* Ensure minimum interactive target size — WCAG 2.5.5 */
+a,
+button,
+[role="button"] {
+  min-height: 24px;
 }

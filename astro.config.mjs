@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -14,14 +14,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  fonts: [
-    {
-      provider: fontProviders.google(),
-      name: "Lora",
-      cssVariable: "--astro-font-lora",
-      weights: [400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      subsets: ["latin"],
-    },
-  ],
 });

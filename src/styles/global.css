@@ -354,20 +354,22 @@ body {
   }
 }
 
-/* Focus-visible ring — WCAG 2.4.7: 3px minimum, high contrast */
+/* Focus-visible ring — WCAG 2.4.7: double ring ensures contrast on any background */
 :focus-visible {
   outline: 3px solid var(--color-primary);
-  outline-offset: 4px;
+  outline-offset: 3px;
   border-radius: 4px;
+  box-shadow: 0 0 0 6px white;
 }
 
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Ensure minimum interactive target size — WCAG 2.5.5 */
+/* Ensure minimum interactive target size — WCAG 2.5.5 (44×44px) */
 a,
 button,
 [role="button"] {
-  min-height: 24px;
+  min-height: 44px;
+  min-width: 44px;
 }

@@ -70,7 +70,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          CONSULTA EXTERNA
          ═══════════════════════════════════ -->
-    <section id="consulta-externa" class="py-24 bg-white scroll-mt-36">
+    <section id="consulta-externa" aria-label="Consulta Externa: Atención médica general" class="py-24 bg-white scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -145,7 +145,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          HOSPITALIZACIÓN
          ═══════════════════════════════════ -->
-    <section id="hospitalizacion" class="py-24 bg-hsmGray scroll-mt-36">
+    <section id="hospitalizacion" aria-label="Hospitalización: Observación y cuidado continuo" class="py-24 bg-hsmGray scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl md:order-2">
@@ -181,7 +181,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          EMERGENCIA
          ═══════════════════════════════════ -->
-    <section id="emergencia" class="py-24 bg-white scroll-mt-36">
+    <section id="emergencia" aria-label="Emergencia 24/7: Siempre disponibles" class="py-24 bg-white scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -218,7 +218,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          LABORATORIO
          ═══════════════════════════════════ -->
-    <section id="laboratorio" class="py-24 bg-hsmGray scroll-mt-36">
+    <section id="laboratorio" aria-label="Laboratorio Clínico: Análisis clínicos propios" class="py-24 bg-hsmGray scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl md:order-2">
@@ -291,7 +291,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          RADIOLOGÍA
          ═══════════════════════════════════ -->
-    <section id="radiologia" class="py-24 bg-white scroll-mt-36">
+    <section id="radiologia" aria-label="Radiología: Diagnóstico por imágenes" class="py-24 bg-white scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -326,7 +326,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- ═══════════════════════════════════
          FARMACIA
          ═══════════════════════════════════ -->
-    <section id="farmacia" class="py-24 bg-hsmGray scroll-mt-36">
+    <section id="farmacia" aria-label="Farmacia: Medicamentos esenciales" class="py-24 bg-hsmGray scroll-mt-36">
       <div class="max-w-[1400px] mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-start">
           <div class="relative aspect-[4/3] overflow-hidden rounded-2xl md:order-2">
@@ -371,5 +371,28 @@ import pregnancy from "../assets/images/pregnancy.jpg";
       </div>
     </div>
   </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("nav[aria-label='Navegación de servicios'] a");
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => {
+              const isCurrent = link.getAttribute("href") === `#${entry.target.id}`;
+              link.setAttribute("aria-current", isCurrent ? "true" : "false");
+              link.classList.toggle("text-primary", isCurrent);
+              link.classList.toggle("text-gray-400", !isCurrent);
+            });
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
 
 </Layout>

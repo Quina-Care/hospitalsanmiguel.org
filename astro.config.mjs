@@ -17,16 +17,8 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: "Fraunces",
-      cssVariable: "--astro-font-fraunces",
-      weights: [400, 600, 700, 900],
-      styles: ["normal", "italic"],
-      subsets: ["latin"],
-    },
-    {
-      provider: fontProviders.google(),
-      name: "Plus Jakarta Sans",
-      cssVariable: "--astro-font-jakarta",
+      name: "Arimo",
+      cssVariable: "--astro-font-arimo",
       weights: [400, 500, 600, 700],
       styles: ["normal"],
       subsets: ["latin"],

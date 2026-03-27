@@ -1,47 +1,65 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Terracotta replaces alarm red — earthy, warm, authoritative without danger */
+@font-face {
+  font-family: "Effra";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Effra_Lt.ttf") format("truetype");
+  ascent-override: 85%;
+  descent-override: 20%;
+}
+
+@theme {
+  /* Terracotta — earthy, warm, authoritative without danger */
   --color-hsmRed: #c44a30;
-  /* Warm espresso replaces cold black — rich, human, grounded */
+  /* Warm espresso — rich, human, grounded */
   --color-hsmBlack: #1e1812;
-  /* Deep forest green — Amazonian, life, healing — used for labels */
+  /* Deep forest green — Amazonian, life, healing */
   --color-hsmForest: #2d5a3d;
   /* Warm ivory — soft tropical sunlight on a wall */
   --color-hsmGray: #fdf5ec;
 
-  --font-sans: var(--astro-font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--astro-font-fraunces), Georgia, "Times New Roman", serif;
+  --font-effra: "Effra", sans-serif;
+  --font-sans: var(--astro-font-arimo), "Arimo", sans-serif;
 }
 
+/* ──────────────────────────────────────────────
+   Design tokens: typography & buttons
+   ────────────────────────────────────────────── */
 :root {
+  /* Section labels (small uppercase) */
   --label-font: var(--font-sans);
   --label-size: 13px;
   --label-weight: 700;
   --label-tracking: 0.12em;
   --label-color: var(--color-hsmForest);
 
-  --heading-font: var(--font-display);
+  /* Section headings */
+  --heading-font: var(--font-effra);
   --heading-weight: 700;
-  --heading-tracking: -0.02em;
+  --heading-tracking: -0.025em;
   --heading-color: var(--color-hsmBlack);
 
+  /* Body / description text */
   --body-font: var(--font-sans);
   --body-size: 17px;
   --body-line-height: 1.75;
   --body-color: #5a4a3a;
 
+  /* Buttons */
   --btn-font: var(--font-sans);
   --btn-size: 13px;
   --btn-weight: 700;
   --btn-tracking: 0.08em;
 
+  /* Meta text (dates, categories, badges) */
   --meta-font: var(--font-sans);
   --meta-size: 10px;
   --meta-weight: 700;
   --meta-tracking: 0.2em;
   --meta-color: #8a7060;
 
+  /* Footer headings */
   --footer-heading-font: var(--font-sans);
   --footer-heading-size: 11px;
   --footer-heading-weight: 700;
@@ -60,9 +78,9 @@
   display: block;
 }
 
-/* Headings use the display serif throughout — color set per-element via Tailwind */
-h1, h2 {
-  font-family: var(--font-display);
+h1,
+h2 {
+  font-family: var(--font-effra);
   font-weight: 700;
   letter-spacing: var(--heading-tracking);
 }
@@ -93,8 +111,7 @@ h3 {
   font-weight: var(--btn-weight);
   letter-spacing: var(--btn-tracking);
   text-transform: uppercase;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out,
-    border-color 0.25s ease-out, box-shadow 0.25s ease-out, transform 0.2s ease-out;
+  transition: all 0.3s;
   display: inline-block;
   padding: 0.875rem 1.875rem;
 }
@@ -139,6 +156,24 @@ h3 {
   transform: translateY(-1px);
 }
 
+.hsm-btn--ghost {
+  color: var(--color-hsmRed);
+  background: transparent;
+}
+.hsm-btn--ghost:hover {
+  color: var(--color-hsmBlack);
+}
+
+.hsm-btn--white {
+  background-color: white;
+  color: var(--color-hsmRed);
+  border-radius: 9999px;
+}
+.hsm-btn--white:hover {
+  background-color: var(--color-hsmBlack);
+  color: white;
+}
+
 /* ─── Utility ────────────────────────────────────────────── */
 
 .hsm-meta {
@@ -159,20 +194,148 @@ h3 {
   color: white;
 }
 
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Prose ──────────────────────────────────────────────── */
+
+.prose-article,
+.prose-landing > p {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.prose-landing > p {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+.prose-article p {
+  margin-bottom: 1.5em;
+}
+
+.prose-article > p:first-of-type::first-letter {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--color-hsmRed);
+  float: left;
+  margin-right: 0.75rem;
+  line-height: 1;
+  font-family: var(--font-effra);
+}
+
+.prose-article h2,
+.prose-article h3,
+.prose-article h4 {
+  font-family: var(--font-effra);
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.prose-article h2 {
+  font-size: 1.875rem;
+  letter-spacing: -0.025em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.prose-article h3 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  text-transform: uppercase;
+}
+
+.prose-article h4 {
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-article a {
+  color: var(--color-hsmRed);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.prose-article a:hover {
+  color: #1a1a1a;
+}
+
+.prose-article blockquote {
+  border-left: 4px solid var(--color-hsmRed);
+  padding: 1rem 0 1rem 2rem;
+  margin: 3rem 0;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  background: #f9fafb;
+}
+
+.prose-article ul,
+.prose-article ol {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+}
+
+.prose-article li {
+  margin-bottom: 0.5em;
+}
+
+.prose-article img {
+  border-radius: 0.75rem;
+  margin: 2em 0;
+}
+
+.prose-article figure {
+  margin: 2.5em 0;
+}
+
+.prose-article figcaption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.75em;
+  font-family: var(--font-effra);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.prose-article strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.prose-article hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 3em 0;
+}
+
 /* ─── Base ───────────────────────────────────────────────── */
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-effra);
   color: var(--body-color);
+  scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: auto;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
+@media (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto;
   }
 }
 

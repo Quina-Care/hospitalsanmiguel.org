@@ -30,7 +30,10 @@
       "Bash(mv \"laboratorium.jpg\" \"laboratory_room.jpg\")",
       "Bash(mv \"maternidad.jpg\" \"maternity.jpg\")",
       "Bash(mv \"cirugia.jpg\" \"surgery.jpg\")",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(identify /home/darius/Develop/daar/hospitalsanmiguel/src/assets/images/pharmacy_landing.jpg)",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\(''/home/darius/Develop/daar/hospitalsanmiguel/src/assets/images/pharmacy_landing.jpg''\\); print\\(img.size\\)\")",
+      "Bash(python3:*)"
     ]
   }
 }

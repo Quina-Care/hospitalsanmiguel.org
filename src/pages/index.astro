@@ -13,6 +13,7 @@ import maternity from "../assets/images/maternity.jpg";
 import community from "../assets/images/community.jpg";
 import pregnancy from "../assets/images/pregnancy.jpg";
 import emergencyLanding from "../assets/images/emergency_landing.jpg";
+import doctors from "../assets/images/doctors.jpg";
 ---
 
 <Layout
@@ -118,6 +119,80 @@ import emergencyLanding from "../assets/images/emergency_landing.jpg";
         </a>
       </div>
     </div>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACTO
+         ═══════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contacto-heading" class="py-24 bg-light">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="hsm-label mb-3">Contacto</span>
+          <h2 id="contacto-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
+            Medios de contacto
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+          <div class="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-md">
+            <Image
+              src={doctors}
+              alt="Equipo médico del Hospital San Miguel"
+              class="w-full h-full object-cover absolute inset-0"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <dl class="space-y-8">
+            <div>
+              <dt class="hsm-meta block mb-2">Dirección</dt>
+              <dd style="color: var(--body-color)">Miguel Sedano 1, Puerto El Carmen del Putumayo, Ecuador</dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Teléfono / WhatsApp</dt>
+              <dd>
+                <a
+                  href="https://wa.me/593939912321"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary font-bold hover:text-dark transition-colors"
+                >
+                  +593 93 991 2321
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Horario Consulta Externa</dt>
+              <dd style="color: var(--body-color)">
+                <p>Lunes a viernes: 8:00 - 16:00</p>
+                <p>Domingo: 8:00 - 12:00</p>
+              </dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Emergencias</dt>
+              <dd style="color: var(--body-color)">24 horas al día, 7 días de la semana</dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Redes Sociales</dt>
+              <dd>
+                <a
+                  href="https://www.facebook.com/hospsanmiguel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary font-bold hover:text-dark transition-colors"
+                >
+                  Facebook: @hospsanmiguel
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
     <!-- ═══════════════════════════════════════════
          SERVICIOS
@@ -402,102 +477,6 @@ import emergencyLanding from "../assets/images/emergency_landing.jpg";
         </div>
       </div>
     </section> -->
-
-    <!-- ═══════════════════════════════════════════
-         CONTACTO
-         ═══════════════════════════════════════════ -->
-    <section id="contacto" aria-labelledby="contacto-heading" class="py-24 bg-light">
-      <div class="max-w-[1400px] mx-auto px-6">
-        <div class="text-center mb-16">
-          <span class="hsm-label mb-3">Contacto</span>
-          <h2 id="contacto-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
-            Medios de contacto
-          </h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <dl class="space-y-8">
-            <div>
-              <dt class="hsm-meta block mb-2">Dirección</dt>
-              <dd style="color: var(--body-color)">Miguel Sedano 1, Puerto El Carmen del Putumayo, Ecuador</dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Teléfono / WhatsApp</dt>
-              <dd>
-                <a
-                  href="https://wa.me/593939912321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary font-bold hover:text-dark transition-colors"
-                >
-                  +593 93 991 2321
-                  <span class="sr-only">(abre en nueva pestaña)</span>
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Horario Consulta Externa</dt>
-              <dd style="color: var(--body-color)">
-                <p>Lunes a viernes: 8:00 - 16:00</p>
-                <p>Domingo: 8:00 - 12:00</p>
-              </dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Emergencias</dt>
-              <dd style="color: var(--body-color)">24 horas al día, 7 días de la semana</dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Redes Sociales</dt>
-              <dd>
-                <a
-                  href="https://www.facebook.com/hospsanmiguel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary font-bold hover:text-dark transition-colors"
-                >
-                  Facebook: @hospsanmiguel
-                  <span class="sr-only">(abre en nueva pestaña)</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 class="text-lg font-bold text-dark mb-4">Servicios Disponibles</h3>
-            <ul class="space-y-3">
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Consulta médica general</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Emergencia 24/7</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Radiografías (Rayos X)</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Laboratorio clínico propio</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Farmacia</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Cuidado materno</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span style="color: var(--body-color)">Observación (hasta 24 horas)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 

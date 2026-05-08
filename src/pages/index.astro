@@ -121,148 +121,6 @@ import doctors from "../assets/images/doctors.jpg";
     </div>
 
     <!-- ═══════════════════════════════════════════
-         CONTACTO
-         ═══════════════════════════════════════════ -->
-    <section id="contacto" aria-labelledby="contacto-heading" class="py-24 bg-light">
-      <div class="max-w-[1400px] mx-auto px-6">
-        <div class="text-center mb-16">
-          <span class="hsm-label mb-3">Contacto</span>
-          <h2 id="contacto-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
-            Medios de contacto
-          </h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-          <div class="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-md">
-            <Image
-              src={doctors}
-              alt="Equipo médico del Hospital San Miguel"
-              class="w-full h-full object-cover absolute inset-0"
-              loading="lazy"
-              format="webp"
-              quality={75}
-              widths={[400, 720]}
-              sizes="(min-width: 768px) 50vw, 100vw"
-            />
-          </div>
-          <dl class="space-y-8">
-            <div>
-              <dt class="hsm-meta block mb-2">Dirección</dt>
-              <dd style="color: var(--body-color)">Miguel Sedano 1, Puerto El Carmen del Putumayo, Ecuador</dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Teléfono / WhatsApp</dt>
-              <dd>
-                <a
-                  href="https://wa.me/593939912321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary font-bold hover:text-dark transition-colors"
-                >
-                  +593 93 991 2321
-                  <span class="sr-only">(abre en nueva pestaña)</span>
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Horario Consulta Externa</dt>
-              <dd style="color: var(--body-color)">
-                <p>Lunes a viernes: 8:00 - 16:00</p>
-                <p>Domingo: 8:00 - 12:00</p>
-              </dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Emergencias</dt>
-              <dd style="color: var(--body-color)">24 horas al día, 7 días de la semana</dd>
-            </div>
-            <div>
-              <dt class="hsm-meta block mb-2">Redes Sociales</dt>
-              <dd>
-                <a
-                  href="https://www.facebook.com/hospsanmiguel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary font-bold hover:text-dark transition-colors"
-                >
-                  Facebook: @hospsanmiguel
-                  <span class="sr-only">(abre en nueva pestaña)</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         SERVICIOS
-         ═══════════════════════════════════════════ -->
-    <section id="servicios" aria-labelledby="servicios-heading" class="py-24 bg-white">
-      <div class="max-w-[1400px] mx-auto px-6">
-        <div class="text-center mb-16">
-          <span class="hsm-label mb-3">Nuestros Servicios</span>
-          <h2 id="servicios-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
-            Atención médica integral
-          </h2>
-          <p class="hsm-body mt-4 max-w-2xl mx-auto">
-            Contamos con personal médico capacitado y equipos modernos para brindar la mejor atención a nuestra comunidad.
-          </p>
-        </div>
-
-        <!-- Service cards -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <a href="/servicios#consulta-externa" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={externalConsultLanding} alt="Médico en consulta con paciente en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Consulta Externa</h3>
-            </div>
-          </a>
-
-          <a href="/servicios#hospitalizacion" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={hospitalizationLanding} alt="Paciente en cama de observación en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Hospitalización</h3>
-            </div>
-          </a>
-
-          <a href="/servicios#laboratorio" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={laboratoryLanding} alt="Técnica de laboratorio analizando muestras en el laboratorio del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Laboratorio Clínico</h3>
-            </div>
-          </a>
-
-          <a href="/servicios#emergencia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={emergencyLanding} alt="Equipo médico atendiendo una emergencia en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Emergencia 24/7</h3>
-            </div>
-          </a>
-
-          <a href="/servicios#radiologia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={radiologyConsultLanding} alt="Médico realizando consulta de radiología en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Radiología</h3>
-            </div>
-          </a>
-
-          <a href="/servicios#farmacia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
-            <Image src={pharmacyLanding} alt="Estantes con medicamentos en la farmacia del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-2xl font-extrabold text-white">Farmacia</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
          PRECIOS
          ═══════════════════════════════════════════ -->
     <section id="precios" aria-labelledby="precios-heading" class="py-24 bg-light">
@@ -381,6 +239,148 @@ import doctors from "../assets/images/doctors.jpg";
               </table>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SERVICIOS
+         ═══════════════════════════════════════════ -->
+    <section id="servicios" aria-labelledby="servicios-heading" class="py-24 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="hsm-label mb-3">Nuestros Servicios</span>
+          <h2 id="servicios-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
+            Atención médica integral
+          </h2>
+          <p class="hsm-body mt-4 max-w-2xl mx-auto">
+            Contamos con personal médico capacitado y equipos modernos para brindar la mejor atención a nuestra comunidad.
+          </p>
+        </div>
+
+        <!-- Service cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/servicios#consulta-externa" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={externalConsultLanding} alt="Médico en consulta con paciente en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Consulta Externa</h3>
+            </div>
+          </a>
+
+          <a href="/servicios#hospitalizacion" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={hospitalizationLanding} alt="Paciente en cama de observación en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Hospitalización</h3>
+            </div>
+          </a>
+
+          <a href="/servicios#laboratorio" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={laboratoryLanding} alt="Técnica de laboratorio analizando muestras en el laboratorio del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Laboratorio Clínico</h3>
+            </div>
+          </a>
+
+          <a href="/servicios#emergencia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={emergencyLanding} alt="Equipo médico atendiendo una emergencia en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Emergencia 24/7</h3>
+            </div>
+          </a>
+
+          <a href="/servicios#radiologia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={radiologyConsultLanding} alt="Médico realizando consulta de radiología en el Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Radiología</h3>
+            </div>
+          </a>
+
+          <a href="/servicios#farmacia" class="relative rounded-3xl overflow-hidden aspect-[3/2] group block">
+            <Image src={pharmacyLanding} alt="Estantes con medicamentos en la farmacia del Hospital San Miguel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" format="webp" quality={75} widths={[400, 600]} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-extrabold text-white">Farmacia</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACTO
+         ═══════════════════════════════════════════ -->
+    <section id="contacto" aria-labelledby="contacto-heading" class="py-24 bg-light">
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="hsm-label mb-3">Contacto</span>
+          <h2 id="contacto-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-dark">
+            Medios de contacto
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+          <div class="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-md">
+            <Image
+              src={doctors}
+              alt="Equipo médico del Hospital San Miguel"
+              class="w-full h-full object-cover absolute inset-0"
+              loading="lazy"
+              format="webp"
+              quality={75}
+              widths={[400, 720]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <dl class="space-y-8">
+            <div>
+              <dt class="hsm-meta block mb-2">Dirección</dt>
+              <dd style="color: var(--body-color)">Miguel Sedano 1, Puerto El Carmen del Putumayo, Ecuador</dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Teléfono / WhatsApp</dt>
+              <dd>
+                <a
+                  href="https://wa.me/593939912321"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary font-bold hover:text-dark transition-colors"
+                >
+                  +593 93 991 2321
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Horario Consulta Externa</dt>
+              <dd style="color: var(--body-color)">
+                <p>Lunes a viernes: 8:00 - 16:00</p>
+                <p>Domingo: 8:00 - 12:00</p>
+              </dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Emergencias</dt>
+              <dd style="color: var(--body-color)">24 horas al día, 7 días de la semana</dd>
+            </div>
+            <div>
+              <dt class="hsm-meta block mb-2">Redes Sociales</dt>
+              <dd>
+                <a
+                  href="https://www.facebook.com/hospsanmiguel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary font-bold hover:text-dark transition-colors"
+                >
+                  Facebook: @hospsanmiguel
+                  <span class="sr-only">(abre en nueva pestaña)</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>

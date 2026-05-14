@@ -3,16 +3,12 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 
-import hospitalExterior from "../assets/images/hospital_exterior.jpg";
 import externalConsultService from "../assets/images/external_consult_service.jpg";
 import radiologyConsultService from "../assets/images/radiology_consult_service.jpg";
 import hospitalizationService from "../assets/images/hospitalization_service.jpg";
 import laboratoryService from "../assets/images/laboratory_service.jpg";
 import pharmacyService from "../assets/images/pharmacy_service.jpg";
 import emergencyService from "../assets/images/emergency_service.jpg";
-import maternity from "../assets/images/maternity.jpg";
-import community from "../assets/images/community.jpg";
-import pregnancy from "../assets/images/pregnancy.jpg";
 ---
 
 <Layout
@@ -40,7 +36,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <!-- Page hero -->
     <section class="pt-40 pb-16 bg-white">
       <div class="max-w-[1400px] mx-auto px-6">
-        <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors mb-8">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors mb-8">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           Volver al inicio
         </a>
@@ -58,12 +54,12 @@ import pregnancy from "../assets/images/pregnancy.jpg";
     <nav class="sticky top-20 z-40 bg-white border-b border-gray-100" aria-label="Navegación de servicios">
       <div class="max-w-[1400px] mx-auto px-6 overflow-x-auto">
         <ul class="flex gap-6 py-4 text-sm font-bold uppercase tracking-[0.1em] whitespace-nowrap">
-          <li><a href="#consulta-externa" class="text-gray-400 hover:text-primary transition-colors">Consulta Externa</a></li>
-          <li><a href="#hospitalizacion" class="text-gray-400 hover:text-primary transition-colors">Hospitalización</a></li>
-          <li><a href="#emergencia" class="text-gray-400 hover:text-primary transition-colors">Emergencia</a></li>
-          <li><a href="#laboratorio" class="text-gray-400 hover:text-primary transition-colors">Laboratorio</a></li>
-          <li><a href="#radiologia" class="text-gray-400 hover:text-primary transition-colors">Radiología</a></li>
-          <li><a href="#farmacia" class="text-gray-400 hover:text-primary transition-colors">Farmacia</a></li>
+          <li><a href="#consulta-externa" class="text-gray-500 hover:text-primary transition-colors">Consulta Externa</a></li>
+          <li><a href="#hospitalizacion" class="text-gray-500 hover:text-primary transition-colors">Hospitalización</a></li>
+          <li><a href="#emergencia" class="text-gray-500 hover:text-primary transition-colors">Emergencia</a></li>
+          <li><a href="#laboratorio" class="text-gray-500 hover:text-primary transition-colors">Laboratorio</a></li>
+          <li><a href="#radiologia" class="text-gray-500 hover:text-primary transition-colors">Radiología</a></li>
+          <li><a href="#farmacia" class="text-gray-500 hover:text-primary transition-colors">Farmacia</a></li>
         </ul>
       </div>
     </nav>
@@ -374,7 +370,7 @@ import pregnancy from "../assets/images/pregnancy.jpg";
               const isCurrent = link.getAttribute("href") === `#${entry.target.id}`;
               link.setAttribute("aria-current", isCurrent ? "true" : "false");
               link.classList.toggle("text-primary", isCurrent);
-              link.classList.toggle("text-gray-400", !isCurrent);
+              link.classList.toggle("text-gray-500", !isCurrent);
             });
           }
         });

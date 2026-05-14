@@ -1,6 +1,6 @@
 ---
 import { getImage } from "astro:assets";
-import hospitalExterior from "../assets/images/hospital_exterior.jpg";
+import ogScreenshot from "../assets/images/og-screenshot.jpg";
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ const { title, description, image, canonical = `${SITE_URL}/` } = Astro.props;
 
 // Resolve processed image URL so the OG image is always absolute and cache-busted
 const processedOgImage = await getImage({
-  src: hospitalExterior,
+  src: ogScreenshot,
   width: 1200,
   height: 630,
   format: "jpeg",

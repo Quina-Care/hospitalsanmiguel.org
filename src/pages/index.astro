@@ -543,6 +543,18 @@ import doctors from "../assets/images/doctors.jpg";
               Únase a la Putumayo Run desde cualquier lugar de Ecuador. Elija su
               distancia, inscríbase en segundos y forme parte del cambio.
             </p>
+
+            <!-- Live registration tally (populated by the counts script) -->
+            <div class="mt-6 flex flex-wrap gap-3">
+              <div class="rounded-xl bg-white/70 border border-red-100 px-4 py-3 text-center">
+                <div class="text-2xl md:text-3xl font-bold text-primary leading-none pr-count-putumayo">–</div>
+                <div class="hsm-meta mt-1">En Putumayo</div>
+              </div>
+              <div class="rounded-xl bg-white/70 border border-red-100 px-4 py-3 text-center">
+                <div class="text-2xl md:text-3xl font-bold text-primary leading-none pr-count-worldwide">–</div>
+                <div class="hsm-meta mt-1">En el mundo</div>
+              </div>
+            </div>
           </div>
 
           <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
@@ -634,6 +646,7 @@ import doctors from "../assets/images/doctors.jpg";
        reveals it once the counts load) -->
   <div
     id="putumayo-counter"
+    data-counter
     class="fixed bottom-4 left-4 z-40 hidden items-center gap-3 rounded-full bg-white shadow-lg border border-red-100 pl-3 pr-5 py-2"
     aria-live="polite"
   >
@@ -676,22 +689,26 @@ import doctors from "../assets/images/doctors.jpg";
 
   <!-- Putumayo Run signup + live counter -->
   <script>
-    // Refresh the bottom-left registration badge from the live Turso tally.
+    // Refresh every registration tally on the page (the banner line and
+    // the bottom-left badge) from the live Turso counts.
     async function loadPutumayoCounts() {
-      const badge = document.getElementById("putumayo-counter");
-      if (!badge) return;
       try {
         const res = await fetch("/api/putumayo-counts");
         if (!res.ok) return;
         const { putumayo, worldwide } = await res.json();
-        const local = badge.querySelector(".pr-count-putumayo");
-        const world = badge.querySelector(".pr-count-worldwide");
-        if (local) local.textContent = String(putumayo);
-        if (world) world.textContent = String(worldwide);
-        badge.classList.remove("hidden");
-        badge.classList.add("flex");
+        document
+          .querySelectorAll(".pr-count-putumayo")
+          .forEach((el) => (el.textContent = String(putumayo)));
+        document
+          .querySelectorAll(".pr-count-worldwide")
+          .forEach((el) => (el.textContent = String(worldwide)));
+        // Reveal anything that waits for the counts to load.
+        document.querySelectorAll("[data-counter]").forEach((el) => {
+          el.classList.remove("hidden");
+          el.classList.add("flex");
+        });
       } catch {
-        /* leave the badge hidden if the count can't be fetched */
+        /* leave the counters hidden if the count can't be fetched */
       }
     }
     loadPutumayoCounts();

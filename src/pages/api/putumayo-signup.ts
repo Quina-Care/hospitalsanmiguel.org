@@ -6,18 +6,34 @@
 // Putumayo hub by default (hub_id = "putumayo"), so they show up on the
 // map as a Puerto el Carmen pin and count toward the Putumayo total.
 //
-// We deliberately keep this lean compared to quinacare's signup route:
-// no geocoding and no notification mail, just the durable insert. Lat/lng
-// stay NULL and the repo falls back to the hub's coords for the map pin.
+// Like quinacare's signup route, this also fires best-effort notification
+// mail (run manager + Putumayo hub captain) and a Spanish confirmation to
+// the runner. We skip geocoding — lat/lng stay NULL and the repo falls
+// back to the hub's coords for the map pin.
 
 export const prerender = false;
 
 import type { APIRoute } from "astro";
 import { getTurso, EDITION_YEAR, HUB_ID } from "../../lib/turso";
+import { sendMail } from "../../lib/mailer";
 
 // "1k" is the kids' fun run (up to 12 years old); the rest match the
 // distances the quinacare.org signup uses.
 const ALLOWED_DISTANCES = new Set(["1k", "10k", "half", "full"]);
+
+// Human distance labels (Spanish) for the notification + confirmation mail.
+const DISTANCE_LABELS: Record<string, string> = {
+  "1k": "1 km (carrera infantil)",
+  "10k": "10 km",
+  half: "21 km",
+  full: "42 km",
+};
+
+// Putumayo Run 2026 contacts — mirrors src/data/putumayoLoop.ts on the
+// quinacare.org side (runManager + the Putumayo hub captain).
+const RUN_DATE_LABEL = "18 de octubre de 2026";
+const RUN_MANAGER_EMAIL = "yvonne.vanderende@quinacare.org";
+const HUB_CAPTAIN_EMAIL = "hospitalsanmiguel@quinacare.org";
 
 function json(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), {
@@ -69,6 +85,54 @@ export const POST: APIRoute = async ({ request }) => {
   } catch (err) {
     console.error("[putumayo-signup] Turso insert failed", err);
     return json({ error: "Could not save your signup" }, 500);
+  }
+
+  const distanceLabel = DISTANCE_LABELS[distance] ?? distance;
+  const ageLabel = age !== null ? `${age} años` : "—";
+
+  // Operational notice to the run manager and the Putumayo hub captain.
+  // Best-effort: a mail failure must not fail the signup that's already
+  // saved, so each send is wrapped on its own.
+  const details = [
+    `Corredor/a: ${firstName} ${lastName} <${email}>`,
+    `Edición: Putumayo Run ${EDITION_YEAR}`,
+    `Fecha: ${RUN_DATE_LABEL}`,
+    `Distancia: ${distanceLabel}`,
+    `Edad: ${ageLabel}`,
+    `Hub: Putumayo (Puerto el Carmen)`,
+  ].join("\n");
+
+  try {
+    await sendMail({
+      to: `${RUN_MANAGER_EMAIL}, ${HUB_CAPTAIN_EMAIL}`,
+      subject: `[Putumayo Run ${EDITION_YEAR}] Nueva inscripción — ${firstName} ${lastName}`,
+      text: `${firstName} ${lastName} se acaba de inscribir a la Putumayo Run ${EDITION_YEAR}.\n\n${details}`,
+      replyTo: `${firstName} ${lastName} <${email}>`,
+    });
+  } catch (err) {
+    console.error("[putumayo-signup] notification mail failed", err);
+  }
+
+  // Confirmation to the runner, in Spanish.
+  try {
+    await sendMail({
+      to: email,
+      subject: `Confirmación de inscripción — Putumayo Run ${EDITION_YEAR}`,
+      text:
+        `Hola ${firstName},\n\n` +
+        `¡Gracias por inscribirte a la Putumayo Run ${EDITION_YEAR}! ` +
+        `Corres por la salud de la Amazonía ecuatoriana.\n\n` +
+        `Estos son los datos de tu inscripción:\n` +
+        `• Fecha: ${RUN_DATE_LABEL}\n` +
+        `• Distancia: ${distanceLabel}\n` +
+        `• Hub: Putumayo (Puerto el Carmen)\n\n` +
+        `Te enviaremos más detalles a medida que se acerque la fecha. ` +
+        `Si tienes alguna pregunta, escríbenos a ${HUB_CAPTAIN_EMAIL}.\n\n` +
+        `Un saludo,\nHospital San Miguel`,
+      replyTo: HUB_CAPTAIN_EMAIL,
+    });
+  } catch (err) {
+    console.error("[putumayo-signup] runner confirmation mail failed", err);
   }
 
   return json({ ok: true }, 200);

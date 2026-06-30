@@ -1,7 +1,7 @@
 // Turso (libSQL) client. Reads credentials from `TURSO_DATABASE_URL`
 // and `TURSO_AUTH_TOKEN` in the environment (.env at the repo root).
 // Points at the same database the quinacare.org project uses, so the
-// Putumayo Run signups recorded here land in `putumayo_loop_subscribers`
+// Putumayo Carrera signups recorded here land in `putumayo_loop_subscribers`
 // alongside the ones from the main site.
 //
 // Throws at call time if either credential is missing so the API route
@@ -24,7 +24,7 @@ export function getTurso(): Client {
   return cached;
 }
 
-// The Putumayo Run edition + hub these signups attach to. Runners who
+// The Putumayo Carrera edition + hub these signups attach to. Runners who
 // sign up from the hospital site join the local Putumayo hub by default.
 export const EDITION_YEAR = 2026;
 export const HUB_ID = "putumayo";

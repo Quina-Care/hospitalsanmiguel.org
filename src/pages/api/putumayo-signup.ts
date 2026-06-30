@@ -1,6 +1,6 @@
 // POST /api/putumayo-signup
 //
-// Records a Putumayo Run registration from the signup banner on the home
+// Records a Putumayo Carrera registration from the signup banner on the home
 // page into Turso (putumayo_loop_subscribers) — the same table the
 // quinacare.org site writes to. Runners from this site join the local
 // Putumayo hub by default (hub_id = "putumayo"), so they show up on the
@@ -29,7 +29,7 @@ const DISTANCE_LABELS: Record<string, string> = {
   full: "42 km",
 };
 
-// Putumayo Run 2026 contacts — mirrors src/data/putumayoLoop.ts on the
+// Putumayo Carrera 2026 contacts — mirrors src/data/putumayoLoop.ts on the
 // quinacare.org side (runManager + the Putumayo hub captain).
 const RUN_DATE_LABEL = "18 de octubre de 2026";
 const RUN_MANAGER_EMAIL = "yvonne.vanderende@quinacare.org";
@@ -95,7 +95,7 @@ export const POST: APIRoute = async ({ request }) => {
   // saved, so each send is wrapped on its own.
   const details = [
     `Corredor/a: ${firstName} ${lastName} <${email}>`,
-    `Edición: Putumayo Run ${EDITION_YEAR}`,
+    `Edición: Putumayo Carrera ${EDITION_YEAR}`,
     `Fecha: ${RUN_DATE_LABEL}`,
     `Distancia: ${distanceLabel}`,
     `Edad: ${ageLabel}`,
@@ -105,29 +105,29 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     await sendMail({
       to: `${RUN_MANAGER_EMAIL}, ${HUB_CAPTAIN_EMAIL}`,
-      subject: `[Putumayo Run ${EDITION_YEAR}] Nueva inscripción — ${firstName} ${lastName}`,
-      text: `${firstName} ${lastName} se acaba de inscribir a la Putumayo Run ${EDITION_YEAR}.\n\n${details}`,
+      subject: `[Putumayo Carrera ${EDITION_YEAR}] Nueva inscripción — ${firstName} ${lastName}`,
+      text: `${firstName} ${lastName} se acaba de inscribir a la Putumayo Carrera ${EDITION_YEAR}.\n\n${details}`,
       replyTo: `${firstName} ${lastName} <${email}>`,
     });
   } catch (err) {
     console.error("[putumayo-signup] notification mail failed", err);
   }
 
-  // Confirmation to the runner, in Spanish.
+  // Confirmation to the runner, in Spanish (formal "usted").
   try {
     await sendMail({
       to: email,
-      subject: `Confirmación de inscripción — Putumayo Run ${EDITION_YEAR}`,
+      subject: `Confirmación de inscripción — Putumayo Carrera ${EDITION_YEAR}`,
       text:
         `Hola ${firstName},\n\n` +
-        `¡Gracias por inscribirte a la Putumayo Run ${EDITION_YEAR}! ` +
-        `Corres por la salud de la Amazonía ecuatoriana.\n\n` +
-        `Estos son los datos de tu inscripción:\n` +
+        `¡Gracias por inscribirse a la Putumayo Carrera ${EDITION_YEAR}! ` +
+        `Usted corre por la salud de la Amazonía ecuatoriana.\n\n` +
+        `Estos son los datos de su inscripción:\n` +
         `• Fecha: ${RUN_DATE_LABEL}\n` +
         `• Distancia: ${distanceLabel}\n` +
         `• Hub: Putumayo (Puerto el Carmen)\n\n` +
-        `Te enviaremos más detalles a medida que se acerque la fecha. ` +
-        `Si tienes alguna pregunta, escríbenos a ${HUB_CAPTAIN_EMAIL}.\n\n` +
+        `Le enviaremos más detalles a medida que se acerque la fecha. ` +
+        `Si tiene alguna pregunta, escríbanos a ${HUB_CAPTAIN_EMAIL}.\n\n` +
         `Un saludo,\nHospital San Miguel`,
       replyTo: HUB_CAPTAIN_EMAIL,
     });

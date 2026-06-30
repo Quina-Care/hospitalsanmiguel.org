@@ -1,5 +1,5 @@
 // Thin nodemailer wrapper — mirrors the quinacare.org mailer so the
-// Putumayo Run signup notifications go out through the same SMTP
+// Putumayo Carrera signup notifications go out through the same SMTP
 // provider (Resend). Reads credentials from the environment (.env).
 
 import nodemailer from "nodemailer";

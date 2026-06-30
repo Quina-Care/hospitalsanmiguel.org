@@ -1,6 +1,6 @@
 // GET /api/putumayo-counts
 //
-// Live registration tallies for the Putumayo Run badge on the home page:
+// Live registration tallies for the Putumayo Carrera badge on the home page:
 //   - putumayo  → runners signed up to the Putumayo hub
 //   - worldwide → all runners across every hub/location, this edition
 //

@@ -530,6 +530,98 @@ import doctors from "../assets/images/doctors.jpg";
         </p>
         <a href="mailto:hospitalsanmiguel@quinacare.org" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.1em] bg-primary text-white hover:bg-[#bf1122] transition-colors px-5 py-2.5 rounded"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Apóyenos</a>
       </div>
+
+      <!-- ─── Putumayo Run signup banner ─── -->
+      <div class="mt-8 rounded-2xl overflow-hidden border border-red-100 bg-[#fef2f2]">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12">
+          <div class="text-left">
+            <span class="hsm-label mb-4">Putumayo Run 2026 · 18 de octubre</span>
+            <h3 class="text-2xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+              Corra por la salud de la Amazonía
+            </h3>
+            <p class="hsm-body">
+              Únase a la Putumayo Run desde cualquier lugar de Ecuador. Elija su
+              distancia, inscríbase en segundos y forme parte del cambio.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <form id="putumayo-run-form" class="space-y-4" autocomplete="on">
+              <div>
+                <label for="pr-name" class="block mb-1 text-sm font-bold tracking-wide text-dark">Nombre completo</label>
+                <input
+                  id="pr-name"
+                  type="text"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
+                />
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="col-span-2">
+                  <label for="pr-email" class="block mb-1 text-sm font-bold tracking-wide text-dark">Correo electrónico</label>
+                  <input
+                    id="pr-email"
+                    type="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="pr-age" class="block mb-1 text-sm font-bold tracking-wide text-dark">Edad</label>
+                  <input
+                    id="pr-age"
+                    type="number"
+                    name="age"
+                    min="1"
+                    max="119"
+                    inputmode="numeric"
+                    class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
+              <fieldset>
+                <legend class="block mb-2 text-sm font-bold tracking-wide text-dark">Distancia</legend>
+                <div class="grid grid-cols-4 gap-2">
+                  <label class="flex items-center justify-center cursor-pointer py-2.5 px-2 text-sm font-bold border border-gray-200 rounded-md hover:border-primary transition-colors has-checked:border-primary has-checked:bg-red-50 has-checked:text-primary">
+                    <input type="radio" name="distance" value="1k" required class="sr-only" />1 km*
+                  </label>
+                  <label class="flex items-center justify-center cursor-pointer py-2.5 px-2 text-sm font-bold border border-gray-200 rounded-md hover:border-primary transition-colors has-checked:border-primary has-checked:bg-red-50 has-checked:text-primary">
+                    <input type="radio" name="distance" value="10k" class="sr-only" />10 km
+                  </label>
+                  <label class="flex items-center justify-center cursor-pointer py-2.5 px-2 text-sm font-bold border border-gray-200 rounded-md hover:border-primary transition-colors has-checked:border-primary has-checked:bg-red-50 has-checked:text-primary">
+                    <input type="radio" name="distance" value="half" class="sr-only" />21 km
+                  </label>
+                  <label class="flex items-center justify-center cursor-pointer py-2.5 px-2 text-sm font-bold border border-gray-200 rounded-md hover:border-primary transition-colors has-checked:border-primary has-checked:bg-red-50 has-checked:text-primary">
+                    <input type="radio" name="distance" value="full" class="sr-only" />42 km
+                  </label>
+                </div>
+                <p class="mt-2 text-xs" style="color: var(--body-color)">
+                  * La carrera de 1 km es para niñas y niños de hasta 12 años.
+                </p>
+              </fieldset>
+              <button type="submit" class="hsm-btn hsm-btn--primary w-full">
+                <span class="pr-btn-label">Inscribirme</span>
+                <span class="pr-btn-sending hidden">Enviando…</span>
+              </button>
+              <p class="pr-error hidden text-sm text-primary text-center">
+                No se pudo completar la inscripción. Inténtelo de nuevo.
+              </p>
+            </form>
+
+            <div class="pr-success hidden text-center py-6">
+              <div class="mx-auto w-14 h-14 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-4">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h4 class="text-lg font-bold text-dark mb-2">¡Inscripción recibida!</h4>
+              <p class="hsm-body text-base">Le enviaremos los detalles de la Putumayo Run 2026 a su correo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -537,6 +629,25 @@ import doctors from "../assets/images/doctors.jpg";
        FOOTER
        ═══════════════════════════════════════════ -->
   <Footer />
+
+  <!-- Live Putumayo Run registration counter (starts hidden; the script
+       reveals it once the counts load) -->
+  <div
+    id="putumayo-counter"
+    class="fixed bottom-4 left-4 z-40 hidden items-center gap-3 rounded-full bg-white shadow-lg border border-red-100 pl-3 pr-5 py-2"
+    aria-live="polite"
+  >
+    <span class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+    </span>
+    <div class="text-left leading-tight">
+      <div class="text-[10px] font-bold uppercase tracking-[0.15em] text-primary">Putumayo Run 2026</div>
+      <div class="text-sm text-dark">
+        <strong class="pr-count-putumayo">–</strong> en Putumayo ·
+        <strong class="pr-count-worldwide">–</strong> en el mundo
+      </div>
+    </div>
+  </div>
 
   <!-- Minimal JS for mobile menu -->
   <script>
@@ -560,6 +671,88 @@ import doctors from "../assets/images/doctors.jpg";
         toggle?.setAttribute("aria-expanded", "false");
         toggle?.setAttribute("aria-label", "Abrir menú");
       });
+    });
+  </script>
+
+  <!-- Putumayo Run signup + live counter -->
+  <script>
+    // Refresh the bottom-left registration badge from the live Turso tally.
+    async function loadPutumayoCounts() {
+      const badge = document.getElementById("putumayo-counter");
+      if (!badge) return;
+      try {
+        const res = await fetch("/api/putumayo-counts");
+        if (!res.ok) return;
+        const { putumayo, worldwide } = await res.json();
+        const local = badge.querySelector(".pr-count-putumayo");
+        const world = badge.querySelector(".pr-count-worldwide");
+        if (local) local.textContent = String(putumayo);
+        if (world) world.textContent = String(worldwide);
+        badge.classList.remove("hidden");
+        badge.classList.add("flex");
+      } catch {
+        /* leave the badge hidden if the count can't be fetched */
+      }
+    }
+    loadPutumayoCounts();
+
+    const prForm = document.getElementById("putumayo-run-form") as HTMLFormElement | null;
+    prForm?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const label = prForm.querySelector(".pr-btn-label");
+      const sending = prForm.querySelector(".pr-btn-sending");
+      const error = prForm.querySelector(".pr-error");
+      const submitBtn = prForm.querySelector<HTMLButtonElement>('button[type="submit"]');
+      error?.classList.add("hidden");
+      label?.classList.add("hidden");
+      sending?.classList.remove("hidden");
+      if (submitBtn) submitBtn.disabled = true;
+
+      const data = new FormData(prForm);
+
+      // The 1 km fun run is children-only (up to 12). Catch it here so the
+      // runner gets a clear message rather than a generic server error.
+      const distance = String(data.get("distance") ?? "");
+      const ageVal = Number(data.get("age"));
+      if (distance === "1k" && (!Number.isInteger(ageVal) || ageVal > 12)) {
+        if (error) {
+          error.textContent =
+            "La carrera de 1 km es solo para niñas y niños de hasta 12 años. Indique la edad.";
+          error.classList.remove("hidden");
+        }
+        label?.classList.remove("hidden");
+        sending?.classList.add("hidden");
+        if (submitBtn) submitBtn.disabled = false;
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/putumayo-signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            email: data.get("email"),
+            age: data.get("age"),
+            distance: data.get("distance"),
+          }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        prForm.classList.add("hidden");
+        document.querySelector(".pr-success")?.classList.remove("hidden");
+        // Reflect the new registration in the badge straight away.
+        loadPutumayoCounts();
+      } catch {
+        if (error) {
+          error.textContent =
+            "No se pudo completar la inscripción. Inténtelo de nuevo.";
+          error.classList.remove("hidden");
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        label?.classList.remove("hidden");
+        sending?.classList.add("hidden");
+      }
     });
   </script>
 </Layout>

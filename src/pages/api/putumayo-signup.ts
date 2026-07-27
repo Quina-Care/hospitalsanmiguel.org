@@ -14,7 +14,12 @@
 export const prerender = false;
 
 import type { APIRoute } from "astro";
-import { getTurso, EDITION_YEAR, HUB_ID } from "../../lib/turso";
+import {
+  getTurso,
+  ensureSignupColumns,
+  EDITION_YEAR,
+  HUB_ID,
+} from "../../lib/turso";
 import { sendMail } from "../../lib/mailer";
 
 // "1k" is the kids' fun run (up to 12 years old); the rest match the
@@ -27,6 +32,19 @@ const DISTANCE_LABELS: Record<string, string> = {
   "10k": "10 km",
   half: "21 km",
   full: "42 km",
+};
+
+// Sexo — matches the values the source form used.
+const ALLOWED_SEX = new Set(["Mujer", "Hombre"]);
+
+// Edad por rango (value -> human label stored in the DB / mail). "ninos"
+// is the children bracket the 1 km run is reserved for.
+const NINOS_RANGE = "ninos";
+const AGE_RANGE_LABELS: Record<string, string> = {
+  ninos: "Hasta 12 años (niños)",
+  "13-18": "13 a 18 años",
+  "19-35": "19 a 35 años",
+  "36+": "36 años en adelante",
 };
 
 // Putumayo Carrera 2026 contacts — mirrors src/data/putumayoLoop.ts on the
@@ -52,19 +70,30 @@ export const POST: APIRoute = async ({ request }) => {
 
   const fullName = String(body.name ?? "").trim();
   const email = String(body.email ?? "").trim();
+  const sex = String(body.sex ?? "").trim();
+  const ageRange = String(body.ageRange ?? "").trim();
+  const address = String(body.address ?? "").trim();
+  const phone = String(body.phone ?? "").trim();
   const distance = String(body.distance ?? "");
-  // Age is optional; keep it only when it's a sensible whole number.
-  const ageNum = Number(body.age);
-  const age =
-    Number.isInteger(ageNum) && ageNum > 0 && ageNum < 120 ? ageNum : null;
 
-  if (!fullName || !email || !ALLOWED_DISTANCES.has(distance)) {
+  // Every field is required.
+  if (
+    !fullName ||
+    !email ||
+    !ALLOWED_SEX.has(sex) ||
+    !AGE_RANGE_LABELS[ageRange] ||
+    !address ||
+    !phone ||
+    !ALLOWED_DISTANCES.has(distance)
+  ) {
     return json({ error: "Missing or invalid fields" }, 400);
   }
   // The 1 km fun run is reserved for children up to 12 years old.
-  if (distance === "1k" && (age === null || age > 12)) {
+  if (distance === "1k" && ageRange !== NINOS_RANGE) {
     return json({ error: "1k is for children up to 12 years old" }, 400);
   }
+
+  const ageRangeLabel = AGE_RANGE_LABELS[ageRange];
 
   // The subscribers table keeps first/last name separate. Re-use the
   // single name as the surname when the runner only enters one word.
@@ -73,14 +102,29 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const db = getTurso();
+    // Make sure the (nullable) extra columns exist before referencing them.
+    await ensureSignupColumns(db);
     await db.execute({
       sql: `
         INSERT INTO putumayo_loop_subscribers
           (external_id, edition_year, first_name, last_name, email,
-           hub_id, lat, lng, location, count, distance, age, signed_up_at)
-        VALUES (NULL, ?, ?, ?, ?, ?, NULL, NULL, NULL, 1, ?, ?, datetime('now'))
+           hub_id, lat, lng, location, count, distance,
+           sex, age_range, address, phone, signed_up_at)
+        VALUES (NULL, ?, ?, ?, ?, ?, NULL, NULL, NULL, 1, ?,
+                ?, ?, ?, ?, datetime('now'))
       `,
-      args: [EDITION_YEAR, firstName, lastName, email, HUB_ID, distance, age],
+      args: [
+        EDITION_YEAR,
+        firstName,
+        lastName,
+        email,
+        HUB_ID,
+        distance,
+        sex,
+        ageRangeLabel,
+        address,
+        phone,
+      ],
     });
   } catch (err) {
     console.error("[putumayo-signup] Turso insert failed", err);
@@ -88,7 +132,6 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const distanceLabel = DISTANCE_LABELS[distance] ?? distance;
-  const ageLabel = age !== null ? `${age} años` : "—";
 
   // Operational notice to the run manager and the Putumayo hub captain.
   // Best-effort: a mail failure must not fail the signup that's already
@@ -98,7 +141,10 @@ export const POST: APIRoute = async ({ request }) => {
     `Edición: Putumayo Carrera ${EDITION_YEAR}`,
     `Fecha: ${RUN_DATE_LABEL}`,
     `Distancia: ${distanceLabel}`,
-    `Edad: ${ageLabel}`,
+    `Sexo: ${sex}`,
+    `Edad: ${ageRangeLabel}`,
+    `Dirección: ${address}`,
+    `Teléfono/Celular: ${phone}`,
     `Hub: Putumayo (Puerto el Carmen)`,
   ].join("\n");
 

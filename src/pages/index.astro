@@ -597,7 +597,7 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
           <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
             <form id="putumayo-run-form" class="space-y-4" autocomplete="on">
               <div>
-                <label for="pr-name" class="block mb-1 text-sm font-bold tracking-wide text-dark">Nombre completo</label>
+                <label for="pr-name" class="block mb-1 text-sm font-bold tracking-wide text-dark">Nombres y apellidos</label>
                 <input
                   id="pr-name"
                   type="text"
@@ -607,8 +607,8 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
                   class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
                 />
               </div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="col-span-2">
+              <div class="grid grid-cols-2 gap-3">
+                <div>
                   <label for="pr-email" class="block mb-1 text-sm font-bold tracking-wide text-dark">Correo electrónico</label>
                   <input
                     id="pr-email"
@@ -620,17 +620,59 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
                   />
                 </div>
                 <div>
-                  <label for="pr-age" class="block mb-1 text-sm font-bold tracking-wide text-dark">Edad</label>
+                  <label for="pr-phone" class="block mb-1 text-sm font-bold tracking-wide text-dark">Teléfono / Celular</label>
                   <input
-                    id="pr-age"
-                    type="number"
-                    name="age"
-                    min="1"
-                    max="119"
-                    inputmode="numeric"
+                    id="pr-phone"
+                    type="tel"
+                    name="phone"
+                    required
+                    autocomplete="tel"
+                    inputmode="tel"
                     class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
                   />
                 </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="pr-sex" class="block mb-1 text-sm font-bold tracking-wide text-dark">Sexo</label>
+                  <select
+                    id="pr-sex"
+                    name="sex"
+                    required
+                    class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 bg-white focus:border-primary focus:outline-none transition-colors"
+                  >
+                    <option value="" disabled selected>Seleccione…</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="Hombre">Hombre</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pr-age" class="block mb-1 text-sm font-bold tracking-wide text-dark">Edad</label>
+                  <select
+                    id="pr-age"
+                    name="ageRange"
+                    required
+                    class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 bg-white focus:border-primary focus:outline-none transition-colors"
+                  >
+                    <option value="" disabled selected>Seleccione…</option>
+                    <option value="ninos">Hasta 12 años (niños)</option>
+                    <option value="13-18">13 a 18 años</option>
+                    <option value="19-35">19 a 35 años</option>
+                    <option value="36+">36 años en adelante</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="pr-address" class="block mb-1 text-sm font-bold tracking-wide text-dark">Dirección</label>
+                <input
+                  id="pr-address"
+                  type="text"
+                  name="address"
+                  required
+                  autocomplete="street-address"
+                  placeholder="Ciudad / comunidad y referencia"
+                  class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 focus:border-primary focus:outline-none transition-colors"
+                />
               </div>
               <fieldset>
                 <legend class="block mb-2 text-sm font-bold tracking-wide text-dark">Distancia</legend>
@@ -738,14 +780,14 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
 
       const data = new FormData(prForm);
 
-      // The 1 km fun run is children-only (up to 12). Catch it here so the
-      // runner gets a clear message rather than a generic server error.
+      // The 1 km fun run is children-only. Catch it here so the runner gets a
+      // clear message rather than a generic server error.
       const distance = String(data.get("distance") ?? "");
-      const ageVal = Number(data.get("age"));
-      if (distance === "1k" && (!Number.isInteger(ageVal) || ageVal > 12)) {
+      const ageRange = String(data.get("ageRange") ?? "");
+      if (distance === "1k" && ageRange !== "ninos") {
         if (error) {
           error.textContent =
-            "La carrera de 1 km es solo para niñas y niños de hasta 12 años. Indique la edad.";
+            "La carrera de 1 km es solo para niñas y niños de hasta 12 años.";
           error.classList.remove("hidden");
         }
         label?.classList.remove("hidden");
@@ -761,7 +803,10 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
           body: JSON.stringify({
             name: data.get("name"),
             email: data.get("email"),
-            age: data.get("age"),
+            sex: data.get("sex"),
+            ageRange: data.get("ageRange"),
+            address: data.get("address"),
+            phone: data.get("phone"),
             distance: data.get("distance"),
           }),
         });

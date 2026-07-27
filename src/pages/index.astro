@@ -14,6 +14,7 @@ import community from "../assets/images/community.jpg";
 import pregnancy from "../assets/images/pregnancy.jpg";
 import emergencyLanding from "../assets/images/emergency_landing.jpg";
 import doctors from "../assets/images/doctors.jpg";
+import putumayo2025 from "../assets/images/putumayo-2025.jpg";
 ---
 
 <Layout
@@ -531,17 +532,51 @@ import doctors from "../assets/images/doctors.jpg";
         <a href="mailto:hospitalsanmiguel@quinacare.org" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.1em] bg-primary text-white hover:bg-[#bf1122] transition-colors px-5 py-2.5 rounded"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Apóyenos</a>
       </div>
 
+      <!-- ─── Carrera de Putumayo intro post ─── -->
+      <div class="mt-16 grid md:grid-cols-2 items-stretch overflow-hidden rounded-2xl border border-gray-200 bg-light">
+        <div class="relative min-h-[240px] md:min-h-full">
+          <Image
+            src={putumayo2025}
+            alt="Corredores en la Carrera de Putumayo 2025"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            format="webp"
+            quality={75}
+            widths={[400, 720, 1000]}
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
+        <div class="p-8 md:p-12">
+          <span class="hsm-label mb-4">Una carrera mundial por el Hospital San Miguel</span>
+          <h3 class="text-2xl md:text-4xl font-bold text-dark tracking-tight mb-5">
+            6ta Carrera de Putumayo 2026
+          </h3>
+          <p class="hsm-body">
+            El domingo 18 de octubre de 2026, gente en diferentes países
+            alrededor del mundo va a correr para apoyar al Hospital San Miguel en
+            Puerto el Carmen de Putumayo, que para miles de personas es el único
+            acceso a atención médica adecuada. Los gastos operativos del hospital
+            (medicamentos, sueldos, agua, luz, combustible para el generador) son
+            un desafío cada mes. Con la Carrera de Putumayo recaudamos fondos en
+            todo el mundo, todos en el mismo día, a la misma hora, para mantener
+            esa atención médica en marcha. Cada persona que participa cuenta.
+            Juntos hacemos la diferencia.
+          </p>
+        </div>
+      </div>
+
       <!-- ─── Putumayo Carrera signup banner ─── -->
       <div class="mt-8 rounded-2xl overflow-hidden border border-red-100 bg-[#fef2f2]">
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12">
           <div class="text-left">
-            <span class="hsm-label mb-4">Putumayo Carrera 2026 · 18 de octubre</span>
+            <span class="hsm-label mb-4">Carrera de Putumayo · 18 de octubre de 2026</span>
             <h3 class="text-2xl md:text-4xl font-bold text-dark tracking-tight mb-4">
-              Corra por la salud de la Amazonía
+              Actívate Para Tu Salud
             </h3>
             <p class="hsm-body">
-              Únase a la Putumayo Carrera desde cualquier lugar del Ecuador.
-              Elija su distancia, inscríbase en segundos y sea parte del cambio.
+              ¡Inscríbete ya! La sexta Carrera de Putumayo, con distancias de
+              1K, 10K, 21K y 42K. ¡Participa con tu familia, amigos y conocidos,
+              recibe una medalla y gana un premio!
             </p>
 
             <!-- Live registration tally (populated by the counts script) -->

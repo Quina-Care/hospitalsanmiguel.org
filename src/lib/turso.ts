@@ -13,8 +13,15 @@ let cached: Client | undefined;
 
 export function getTurso(): Client {
   if (cached) return cached;
-  const url = import.meta.env.TURSO_DATABASE_URL;
-  const authToken = import.meta.env.TURSO_AUTH_TOKEN;
+  // Read at runtime from the function's environment first — Netlify injects
+  // the production env vars into process.env at request time — falling back
+  // to import.meta.env for `astro dev` (which loads .env). Using process.env
+  // avoids Vite inlining the credentials into the build artifact, so setting
+  // the vars for production runtime (not build) is enough.
+  const url =
+    process.env.TURSO_DATABASE_URL ?? import.meta.env.TURSO_DATABASE_URL;
+  const authToken =
+    process.env.TURSO_AUTH_TOKEN ?? import.meta.env.TURSO_AUTH_TOKEN;
   if (!url || !authToken) {
     throw new Error(
       "Turso not configured: set TURSO_DATABASE_URL and TURSO_AUTH_TOKEN in .env",

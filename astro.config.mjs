@@ -8,9 +8,6 @@ export default defineConfig({
   adapter: netlify({
     imageCDN: false,
   }),
-  image: {
-    quality: 75,
-  },
   vite: {
     plugins: [tailwindcss()],
   },

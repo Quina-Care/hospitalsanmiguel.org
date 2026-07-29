@@ -655,7 +655,9 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
                     class="w-full py-2.5 px-3 text-sm rounded-md border border-gray-200 bg-white focus:border-primary focus:outline-none transition-colors"
                   >
                     <option value="" disabled selected>Seleccione…</option>
-                    <option value="ninos">Hasta 12 años (niños)</option>
+                    <option value="4-6">4 a 6 años</option>
+                    <option value="7-9">7 a 9 años</option>
+                    <option value="10-12">10 a 12 años</option>
                     <option value="13-18">13 a 18 años</option>
                     <option value="19-35">19 a 35 años</option>
                     <option value="36+">36 años en adelante</option>
@@ -784,7 +786,7 @@ import putumayo2025 from "../assets/images/putumayo-2025.jpg";
       // clear message rather than a generic server error.
       const distance = String(data.get("distance") ?? "");
       const ageRange = String(data.get("ageRange") ?? "");
-      if (distance === "1k" && ageRange !== "ninos") {
+      if (distance === "1k" && !["4-6", "7-9", "10-12"].includes(ageRange)) {
         if (error) {
           error.textContent =
             "La carrera de 1 km es solo para niñas y niños de hasta 12 años.";

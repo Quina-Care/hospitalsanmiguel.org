@@ -345,11 +345,19 @@ button {
 body {
   font-family: var(--font-sans);
   color: var(--body-color);
+}
+
+/* Smooth in-page navigation for the menu / anchor links. scroll-behavior
+   must live on the scrolling element (html) — on body it has no effect —
+   and scroll-padding-top offsets the fixed ~80px (h-20) header so section
+   headings land below it instead of being hidden on jump. */
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body {
+  html {
     scroll-behavior: auto;
   }
 }

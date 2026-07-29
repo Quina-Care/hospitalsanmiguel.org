@@ -37,11 +37,13 @@ const DISTANCE_LABELS: Record<string, string> = {
 // Sexo — matches the values the source form used.
 const ALLOWED_SEX = new Set(["Mujer", "Hombre"]);
 
-// Edad por rango (value -> human label stored in the DB / mail). "ninos"
-// is the children bracket the 1 km run is reserved for.
-const NINOS_RANGE = "ninos";
+// Edad por rango (value -> human label stored in the DB / mail). The three
+// children brackets are the ones the 1 km run is reserved for.
+const CHILD_RANGES = new Set(["4-6", "7-9", "10-12"]);
 const AGE_RANGE_LABELS: Record<string, string> = {
-  ninos: "Hasta 12 años (niños)",
+  "4-6": "4 a 6 años",
+  "7-9": "7 a 9 años",
+  "10-12": "10 a 12 años",
   "13-18": "13 a 18 años",
   "19-35": "19 a 35 años",
   "36+": "36 años en adelante",
@@ -89,7 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ error: "Missing or invalid fields" }, 400);
   }
   // The 1 km fun run is reserved for children up to 12 years old.
-  if (distance === "1k" && ageRange !== NINOS_RANGE) {
+  if (distance === "1k" && !CHILD_RANGES.has(ageRange)) {
     return json({ error: "1k is for children up to 12 years old" }, 400);
   }
 

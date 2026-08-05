@@ -4,7 +4,7 @@
 // page into Turso (putumayo_loop_subscribers) — the same table the
 // quinacare.org site writes to. Runners from this site join the local
 // Putumayo hub by default (hub_id = "putumayo"), so they show up on the
-// map as a Puerto el Carmen pin and count toward the Putumayo total.
+// map as a Puerto El Carmen pin and count toward the Putumayo total.
 //
 // Like quinacare's signup route, this also fires best-effort notification
 // mail (run manager + Putumayo hub captain) and a Spanish confirmation to
@@ -147,7 +147,7 @@ export const POST: APIRoute = async ({ request }) => {
     `Edad: ${ageRangeLabel}`,
     `Dirección: ${address}`,
     `Teléfono/Celular: ${phone}`,
-    `Hub: Putumayo (Puerto el Carmen)`,
+    `Hub: Putumayo (Puerto El Carmen)`,
   ].join("\n");
 
   try {
@@ -173,7 +173,7 @@ export const POST: APIRoute = async ({ request }) => {
         `Estos son los datos de su inscripción:\n` +
         `• Fecha: ${RUN_DATE_LABEL}\n` +
         `• Distancia: ${distanceLabel}\n` +
-        `• Hub: Putumayo (Puerto el Carmen)\n\n` +
+        `• Hub: Putumayo (Puerto El Carmen)\n\n` +
         `Le enviaremos más detalles a medida que se acerque la fecha. ` +
         `Si tiene alguna pregunta, escríbanos a ${HUB_CAPTAIN_EMAIL}.\n\n` +
         `Un saludo,\nHospital San Miguel`,

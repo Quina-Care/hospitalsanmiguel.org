@@ -22,16 +22,17 @@ import {
 } from "../../lib/turso";
 import { sendMail } from "../../lib/mailer";
 
-// "1k" is the kids' fun run (up to 12 years old); the rest match the
-// distances the quinacare.org signup uses.
-const ALLOWED_DISTANCES = new Set(["1k", "10k", "half", "full"]);
+// The four distances the Putumayo hub offers, matching its `distances`
+// array in quinacare's src/data/putumayoLoop.ts (the run also has a 5 km,
+// but not at this hub). "1k" is the kids' fun run, up to 12 years old.
+const ALLOWED_DISTANCES = new Set(["1k", "10k", "21k", "42k"]);
 
 // Human distance labels (Spanish) for the notification + confirmation mail.
 const DISTANCE_LABELS: Record<string, string> = {
   "1k": "1 km (carrera infantil)",
   "10k": "10 km",
-  half: "21 km",
-  full: "42 km",
+  "21k": "21 km",
+  "42k": "42 km",
 };
 
 // Sexo — matches the values the source form used.
